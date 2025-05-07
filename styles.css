@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Background image container */
+  .hero-section {
+    background-image: url('bride.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    color: #000;
+    font-family: 'Playfair Display', serif;
+  }
+  
+ 
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: relative;
+  }
+  
+  .nav-left a,
+  .nav-right a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+    font-family: inherit;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  .nav-right img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Main text box */
+  .text-container {
+    position: absolute;
+    top: 40%;
+    left: 60px;
+    max-width: 600px;
+    background: transparent;
+  }
+  
+  .text-container h1 {
+    font-size: 28px;
+    background-color: white;
+    display: inline-block;
+    padding: 10px 15px;
+    font-style: italic;
+    font-weight: 600;
+  }
+  
+  .text-container p {
+    background-color: white;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  
+
+  .explore-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  .explore-btn:hover {
+    background-color: #555;
+  }
+  
