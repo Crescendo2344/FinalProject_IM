@@ -5,9 +5,8 @@
     box-sizing: border-box;
   }
   
-  /* Background image container */
   .hero-section {
-    background-image: url('bride.jpg'); 
+    background-image: url('/Images/homepage.webp'); 
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -19,6 +18,7 @@
  
   .navbar {
     display: flex;
+    background-color: #f1f1f1;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
@@ -96,8 +96,8 @@
   }
   
   .text-container h1 {
+    color: #f1f1f1;
     font-size: 28px;
-    background-color: white;
     display: inline-block;
     padding: 10px 15px;
     font-style: italic;
@@ -105,7 +105,7 @@
   }
   
   .text-container p {
-    background-color: white;
+    color: #f1f1f1;
     padding: 15px;
     margin-top: 10px;
     font-size: 16px;
