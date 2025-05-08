@@ -138,6 +138,15 @@
     background-color: #f9f9f9;
   }
   
+  .ImageGallery:hover .ImageContainer {
+    filter: grayscale(50%);
+    transition: filter 0.3s ease;
+  }
+  
+  .ImageContainer:hover {
+    filter: grayscale(0%);
+    z-index: 1;
+  }
   .ImageGroup {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -179,6 +188,7 @@
   .ImageContainer:hover .caption .arrow {
     opacity: 1;
     transform: translateX(0);
+    transition: 0.3s ease-in-out;
   }
   
   .caption {
@@ -203,7 +213,7 @@
     opacity: 0;
     font-size: 35px;
     margin-right: 30px;
-    transform: translateX(-10px);
+    transform: translateX(-15px);
     transition: opacity 0.3s ease;
   }
   
