@@ -6,10 +6,14 @@
   }
   
   .hero-section {
-    background-image: url('/Images/homepage.webp'); 
+    background-image: url('/Images/homepage.jpg'); 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 20px;
     height: 100vh;
+    overflow: auto;
+    scroll-behavior: smooth;
     position: relative;
     color: #000;
     font-family: 'Playfair Display', serif;
@@ -86,10 +90,9 @@
     transform: translateX(-50%);
   }
   
-  /* Main text box */
   .text-container {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 60px;
     max-width: 600px;
     background: transparent;
@@ -117,6 +120,8 @@
   .explore-btn {
     margin-top: 20px;
     padding: 12px 20px;
+    position: relative;
+    right: -15px;
     background-color: #333;
     color: white;
     border: none;
@@ -127,5 +132,78 @@
   
   .explore-btn:hover {
     background-color: #555;
+  }
+  
+  .ImageGallery {
+    background-color: #f9f9f9;
+  }
+  
+  .ImageGroup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+  }
+  
+  .ImageGroup:hover .ImageContainer {
+    filter: grayscale(50%);
+    transition: filter 0.3s ease;
+  }
+  
+  .ImageGroup .ImageContainer:hover {
+    filter: grayscale(0);
+    z-index: 1;
+  }
+  .ImageContainer {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+  }
+  
+  .ImageContainer img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .ImageContainer:hover img {
+    transform: scale(1.05);
+  }
+
+  .ImageContainer:hover .caption {
+    backdrop-filter: blur(0);
+    
+  }
+  
+  .ImageContainer:hover .caption .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: white;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+    transition: backdrop-filter 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .caption .arrow {
+    opacity: 0;
+    font-size: 35px;
+    margin-right: 30px;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease;
   }
   
