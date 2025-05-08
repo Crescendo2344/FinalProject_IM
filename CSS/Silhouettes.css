@@ -11,17 +11,17 @@
     scroll-behavior: smooth;
     position: relative;
     color: #000;
-    font-family: 'Playfair Display', serif;
   }
   
  
   .navbar {
     display: flex;
-    background-color: #f1f1f1;
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     padding: 0 60px;
     position: relative;
+    font-family: 'Playfair Display', serif;
   }
   
   .nav-left a,
@@ -111,6 +111,17 @@
     color: #000;
   }
   
+  .link{
+    position: absolute;
+    letter-spacing: 2px;
+    color: grey;
+    left: 45.5%;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: #000;
+  }
   .top-container {
     position: absolute;
     display: flex;
@@ -121,10 +132,11 @@
   
   .top-container h1 {
     color: black;
+    font-weight: lighter;
+    font-style: normal;
     font-size: 28px;
     padding: 10px 20px;
-    font-style: italic;
-    font-weight: 600;
+    
   }
 
   .right-btn{
@@ -140,9 +152,47 @@
     padding: 11px;
     border-radius: 5px;
   }
+
+  .btn-sort {
+    position: relative;
+    width: 225px;
+  }
+
+  .btn-sort:hover .btn-dropdown{
+    display: flex;
+  }
   
   .btn:hover {
-     background-color:#f1f1f1;
+     background-color:hsl(0, 0%, 85%);
+  }
+
+  .btn-dropdown{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 5px;
+    right: 20px;
+    width: fit-content;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+
+  .btn-dropdown a {
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 11px;
+    padding-left: 15px;
+  }
+
+  .btn-dropdown a:hover {
+    background-color: hsl(0, 0%, 85%);
   }
   
   .ImageGallery:hover .ImageContainer {
