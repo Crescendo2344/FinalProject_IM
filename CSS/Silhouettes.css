@@ -143,6 +143,10 @@
     margin-top: 11px;
     margin-right: 20px;
   }
+  #btn-sort{
+    padding-left: 39px;
+    padding-right: 35px;
+  }
   .btn {
     border: none;
     cursor: pointer;
@@ -152,22 +156,13 @@
     padding: 11px;
     border-radius: 5px;
   }
-
-  .btn-sort {
-    position: relative;
-    width: 225px;
-  }
-
-  .btn-sort:hover .btn-dropdown{
-    display: flex;
-  }
   
   .btn:hover {
      background-color:hsl(0, 0%, 85%);
   }
 
   .btn-dropdown{
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     margin-top: 5px;
