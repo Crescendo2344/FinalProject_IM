@@ -55,7 +55,34 @@
         <div class="right-btn">
          <button class="btn"><i class="fas fa-arrow-left"></i>
           All Wedding Dresses</button>
-         <button class="btn"><i class="fas fa-filter"></i> Filter</button>
+         <button type="button"class="btn" onclick="sidebar()"><i class="fas fa-filter"></i> Filter</button>
+         <div class="sidebar-overlay" id="sidebarOverlay" onclick="sidebar()"></div>
+         <div class="sidebar" id="sidebar">
+          <div>
+            <h1>Style</h1>
+            <button type="button" class="close-btn" onclick="sidebar()">
+              <i class="fas fa-times"></i>
+            </button>
+            <form>
+             <input type="checkbox" id="style1" name="Boho" value="Boho">
+              <label for="style1"> Boho </label><br>
+             <input type="checkbox" id="style2" name="Classy" value="Classy">
+              <label for="style2"> Classy</label><br>
+             <input type="checkbox" id="style3" name="Minimalist" value="Minimalist">
+              <label for="style3"> Minimalist</label><br>
+             <input type="checkbox" id="style4" name="Modern" value="Modern">
+              <label for="style4"> Modern </label><br>
+             <input type="checkbox" id="style5" name="Puffy" value="Puffy">
+              <label for="style5"> Puffy </label><br>
+             <input type="checkbox" id="style6" name="Romantic" value="Romantic">
+              <label for="style6"> Romantic</label><br>
+             <input type="checkbox" id="style7" name="Sexy" value="Sexy">
+              <label for="style7"> Sexy </label><br>
+             <input type="checkbox" id="style8" name="Vintage" value="Vintage">
+              <label for="style8"> Vintage </label><br>
+          </form>
+        </div>
+         </div>
          <button class="btn1" id="btn-dp">Sort by newness <div class="btn-dropdown">
           <a href="">Sort by popularity</a>
           <a href="">Sort by newness</a>
@@ -107,6 +134,6 @@ fabrics, designs, and virtually any neckline.</p></div>
   
     </div>
 
-  
+  <script src="/JS/A-line.js"></script>
   </body>
 </html>

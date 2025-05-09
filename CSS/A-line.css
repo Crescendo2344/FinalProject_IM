@@ -154,6 +154,62 @@
     margin-top: 11px;
     margin-right: 20px;
   }
+
+  /* Overlay background behind sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+  z-index: 999;
+}
+
+/* Sidebar itself */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 340px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  transform: translateX(100%); /* start off-screen */
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar visible */
+.sidebar.show {
+  transform: translateX(0); /* slide in */
+}
+
+/* Show overlay when sidebar is open */
+.sidebar-overlay.show {
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: hsl(0, 0%, 40%);
+}
+  
+.close-btn:hover {
+  color: #000;
+  font-weight: 400;
+}
   #btn-dp{
     padding-left: 39px;
     padding-right: 35px;
