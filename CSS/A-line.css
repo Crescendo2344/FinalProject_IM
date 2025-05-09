@@ -155,7 +155,7 @@
     margin-right: 20px;
   }
 
-  /* Overlay background behind sidebar */
+  
 .sidebar-overlay {
   display: none;
   position: fixed;
@@ -163,11 +163,11 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.3); 
   z-index: 999;
 }
 
-/* Sidebar itself */
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -179,18 +179,18 @@
   padding: 20px;
   overflow-y: auto;
   z-index: 1000;
-  transform: translateX(100%); /* start off-screen */
+  transform: translateX(100%); 
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
 }
 
-/* Sidebar visible */
+
 .sidebar.show {
-  transform: translateX(0); /* slide in */
+  transform: translateX(0); 
 }
 
-/* Show overlay when sidebar is open */
+
 .sidebar-overlay.show {
   display: block;
 }
@@ -209,6 +209,12 @@
 .close-btn:hover {
   color: #000;
   font-weight: 400;
+}
+
+.chkbox{
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
 }
   #btn-dp{
     padding-left: 39px;
