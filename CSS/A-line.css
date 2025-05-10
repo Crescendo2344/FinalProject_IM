@@ -231,10 +231,11 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    border: 1px solid #ccc;
+    row-gap: 10px;
     border-radius: 5px;
     width: 300px;
   }
+
 .chkbox {
     display: flex;
     flex-direction: column;
