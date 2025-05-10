@@ -38,7 +38,7 @@
     transition: opacity 0.30s;
   }
   .nav-right a:hover {
-    opacity: 0.4;
+    opacity: 0.65;
   }
   
   .dropdown {
@@ -58,7 +58,7 @@
     transition: opacity 0.30s;
   }
   .dropbtn:hover{
-    opacity: 0.4;
+    opacity: 0.65;
   }
 
   .mega-dropdown {
@@ -122,11 +122,9 @@
   .logo a {
     text-decoration: none;
     color: #000;
-    transition: opacity 0.30s;
+    
   }
-  .logo a:hover{
-    opacity: 0.4;
-  }
+  
 
   
   .text-container {
