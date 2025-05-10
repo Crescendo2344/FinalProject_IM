@@ -30,6 +30,10 @@
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: opacity 0.30s;
+  }
+  .nav-right a:hover {
+    opacity: 0.4;
   }
 
   .dropdown {
@@ -46,6 +50,10 @@
     margin: 20px 0;
     color: black;
     font-family: inherit;
+    transition: opacity 0.30s;
+  }
+  .dropbtn:hover{
+    opacity: 0.4;
   }
 
   .mega-dropdown {
@@ -109,6 +117,10 @@
   .logo a {
     text-decoration: none;
     color: #000;
+    transition: opacity 0.30s;
+  }
+  .logo a:hover{
+    opacity: 0.4;
   }
   
   .link{
@@ -121,6 +133,10 @@
   .link a {
     text-decoration: none;
     color: #000;
+    transition: opacity 0.30s;
+  }
+  .link a:hover{
+    opacity: 0.4;
   }
   .top-container {
     position: absolute;
@@ -152,7 +168,7 @@
 
   .right-btn{
     margin-top: 11px;
-    margin-right: 20px;
+    margin-right: 20px; 
   }
 
   
@@ -228,6 +244,7 @@
     font-weight: 500;
     padding: 11px;
     border-radius: 5px;
+    transition: background-color 0.30s;
   }
   
   .btn:hover, .btn1:hover {
