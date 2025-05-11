@@ -341,7 +341,7 @@ input[type="checkbox"]:checked {
   .ImageGroup {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 22px;
+    gap: 20px;
     margin: 0 21px 0 21px;
   }
 
@@ -375,7 +375,7 @@ input[type="checkbox"]:checked {
 
   .ImageContainer .img1, .img2{
     width: 100%;
-    height: 417px;
+    height: 415px;
     transition: opacity 0.5s ease;
     position: absolute;
   }
@@ -386,6 +386,22 @@ input[type="checkbox"]:checked {
     transition: 0.3s ease-in-out;
   } 
   
+  .Cartbutton{
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    width: 35px;
+    font-size: 20px;
+    z-index: 5;
+
+  }
+
+  .Cartbutton:hover {
+    color: hsl(0, 100%, 50%);
+  }
   .caption {
     width: 100%;
     padding: 15px;
