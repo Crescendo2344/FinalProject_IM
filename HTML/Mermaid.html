@@ -2,102 +2,281 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mermaid silhouette wedding dress | Elegant Bridal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mermaid Wedding Dresses | Elegant Bridal</title>
+  <link rel="icon" type="image/icon" href="/Images/favicon.png">
   <link rel="stylesheet" href="/CSS/Silhouettes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header>
-    <div><strong>ELEGANT BRIDAL</strong></div>
-    <nav>
-      <a href="#">Brides</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div>
-      <a href="#">Search</a> 
-      <a href="#">Cart</a> 
-      <a href="#">Account</a> 
-    </div>
-  </header>
-  <main>
-    <div class="hero-title">Ballgown-style wedding dresses </div>
-    <div class="hero-description">
-        Mermaid wedding dresses are your way to go if you’re looking for a wedding gown that can help you beautifully show off your curves. 
-        Fitted through the bodice, waist, and hips, a mermaid gown flares out into a full skirt at the knee, resulting in a form-flattering silhouette. At WONÁ, we offer an amazing collection of mermaid wedding dresses. Book your appointment, and we’ll help you select a perfect mermaid dress for your wedding day.
+    <div class="hero-section">
+      <div class="navbar"> 
+        <div class="nav-left">
+          <div class="dropdown">
+            <button class="dropbtn"> <a>Brides    <i class="fa fa-caret-down"></i></a> </button>
+              <div class="mega-dropdown">
+                <div class="dropdown-column">
+                   <h4>By Silhouettes</h4>
+                   <a href="A-line.html">A-line</a>
+                   <a href="Ballgown.html">Ball Gown</a>
+                   <a href="Mermaid.html">Mermaid</a>
+                   <a href="Sheath.html">Sheath</a>
+                   <a href="Fit-and-flare.html">Fit-and-flare</a>
+                   <a href="Fitted-with-overskirt.html">Fitted with overskirt</a>
+                </div>
+                <div class="dropdown-column">
+                   <h4>By Size</h4>
+                   <a href="#">XS</a>
+                   <a href="#">S</a>
+                   <a href="#">M</a>
+                   <a href="#">L</a>
+                   <a href="#">XL</a>
+                   <a href="#">XXL</a>
+                </div>
+              </div>
+          </div>
+          <button class="dropbtn"><a href="#">Contact</a></button>
+          
+        </div>
+  
+        <div class="logo"><a href="Home.html">ELEGANT BRIDAL</a></div>
+  
+        <div class="nav-right">
+          <a id="search-icon"><i class="fa-solid fa-magnifying-glass" alt="Search"></i></a>
+          <div id="search-bar">
+            <input type="text" placeholder="Search for products..." />
+            <i class="fa-solid fa-times" id="close-search"></i>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping" alt="Cart"></i></a>
+          <a href="#"><i class="fa-solid fa-user" alt="User" ></i></a>
+        </div>
+       </div>
+      
+       <div class="link" id="link-Mermaid"><a href="Home.html">Home</a> >> Mermaid</div>
+        <div class="top-container">
+         <h1>Mermaid silhouette wedding dress - beautiful and charming</h1>
+         <div class="btn-sort">
+        <div class="right-btn">
+         <button class="btn"><i class="fas fa-arrow-left"></i>
+          All Wedding Dresses</button>
+         <button type="button"class="btn" onclick="sidebar()"><i class="fas fa-filter"></i> Filter</button>
+         <div class="sidebar-overlay" id="sidebarOverlay" onclick="sidebar()"></div>
+         <div class="sidebar" id="sidebar">
+          <div class="style-container">
+            <h1>Style</h1>
+            <button type="button" class="close-btn" onclick="sidebar()">
+              <i class="fas fa-times"></i>
+            </button>
+            <form class="chkbox">
+              <div class="style-item">
+                <input type="checkbox" id="style1" name="Boho" value="Boho">
+                <label for="style1">Boho</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style2" name="Classy" value="Classy">
+                <label for="style2">Classy</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style3" name="Minimalist" value="Minimalist">
+                <label for="style3">Minimalist</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style4" name="Modern" value="Modern">
+                <label for="style4">Modern</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style5" name="Puffy" value="Puffy">
+                <label for="style5">Puffy</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style6" name="Romantic" value="Romantic">
+                <label for="style6">Romantic</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style7" name="Sexy" value="Sexy">
+                <label for="style7">Sexy</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style8" name="Vintage" value="Vintage">
+                <label for="style8">Vintage</label>
+              </div>
+            </form>
 
+            <h1>Fabric</h1>
+            <form class="chkbox">
+              <div class="style-item">
+                <input type="checkbox" id="style1" name="3D lace" value="3D lace">
+                <label for="style1">3D lace</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style2" name="Chiffon" value="Chiffon">
+                <label for="style2">Chiffon</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style3" name="Crepe" value="Crepe">
+                <label for="style3">Crepe</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style4" name="Feathers" value="Feathers">
+                <label for="style4">Feathers</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style5" name="Fully beaded" value="Fully beaded">
+                <label for="style5">Fully beaded</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style6" name="Lace" value="Lace">
+                <label for="style6">Lace</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style7" name="Mikado silk" value="Mikado silk">
+                <label for="style7">Mikado silk</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style8" name="Organza" value="Organza">
+                <label for="style8">Organza</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style9" name="Satin" value="Satin">
+                <label for="style9">Satin</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style10" name="Sparkle" value="Sparkle">
+                <label for="style10">Sparkle</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style11" name="Tulle" value="Tulle">
+                <label for="style11">Tulle</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style12" name="Velvet" value="Velvet">
+                <label for="style12">Velvet</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style13" name="Costume fabric" value="Costume fabric">
+                <label for="style13">Costume fabric</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style14" name="Mikado" value="Mikado">
+                <label for="style14">Mikado</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style15" name="Pearls" value="Pearls">
+                <label for="style15">Pearls</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style16" name="Silk" value="Silk">
+                <label for="style16">Silk</label>
+              </div>
+              <div class="style-item">
+                <input type="checkbox" id="style17" name="Suit fabric" value="Suit fabric">
+                <label for="style17">Suit fabric</label>
+              </div>
+            </form>
+         </div>
+         </div>
+         <button class="btn1" id="btn-dp">Sort by newness <div class="btn-dropdown">
+          <a href="">Sort by popularity</a>
+          <a href="">Sort by newness</a>
+          <a href="">Sort by price: low to high</a>
+          <a href="">Sort by price: high to low</a>
+        </div><i class="fa fa-caret-down"></i></button>
+        </div>
+        </div>
+      </div>
+      <div class="bottom-container">
+        <p>Mermaid wedding dresses are your way to go if you’re looking for a wedding gown that can help you beautifully show off your curves. Fitted through the bodice, waist, and hips, a mermaid gown flares out into a full skirt at the knee, resulting in a form-flattering silhouette.</p></div>
+      <div class="ImageGallery">
+        <div class="ImageGroup">
 
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Namib1.jpg" alt="L'Unico" class="img1">
+            <img src="/Images/Namib.jpg" alt="Less is More IV" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Namib</span>
+            </div>
+          </div>
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Ross1.jpg" alt="Less is More IV" class="img1">
+            <img src="/Images/Ross.jpg" alt="L'Unico" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Ross</span>
+            </div>
+          </div>
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Ombra1.jpg" alt="Gemini" class="img1">
+            <img src="/Images/Ombra.jpg" alt="L'Unico" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Ombra</span>
+            </div>
+          </div>
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Dainty1.jpg" alt="Gemini" class="img1">
+            <img src="/Images/Dainty.jpg" alt="Less is More IV" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Dainty</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ImageGroup">
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Kennedy1.jpg" alt="L'Unico" class="img1">
+            <img src="/Images/Kennedy.jpg" alt="Less is More IV" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Kennedy</span>
+            </div>
+          </div>
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Dune1.jpg" alt="Less is More IV" class="img1">
+            <img src="/Images/Dune.jpg" alt="L'Unico" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Dune</span>
+            </div>
+          </div>
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Miller1.jpg" alt="Gemini" class="img1">
+            <img src="/Images/Miller.jpg" alt="L'Unico" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Miller</span>
+            </div>
+          </div>
+
+          <div class="ImageContainer">
+            <button class="Cartbutton"><i class="fa-solid fa-cart-plus" alt="Cart"></i></button>
+            <img src="/Images/Sheyniss1.jpg" alt="Gemini" class="img1">
+            <img src="/Images/Sheyniss.jpg" alt="Less is More IV" class="img2">
+            <div class="caption">
+              <span>Mermaid</span>
+              <span class="Dressname">Sheyniss</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
     </div>
 
-    <div class="filter-bar">
-      <a href="#">&larr; All Wedding Dresses</a>
-      <div>
-        <strong>Filter</strong> |
-        Sort by newness
-      </div>
-    </div>
-
-    <div class="gallery">
-      <div class="card">
-        <img src="Maxwell.jpg" class="main-img" alt="Dress 1">
-        <img src="Maxwell.1.jpg" class="hover-img" alt="Dress 1 Hover">
-        Maxwell
-      </div>
-      <div class="card">
-        <img src="Herta.jpg" class="main-img" alt="Dress 2">
-        <img src="Herta.1.jpg" class="hover-img" alt="Dress 2 Hover">
-        Herta
-      </div>
-      <div class="card">
-        <img src="Batiste.jpg" class="main-img" alt="Dress 3">
-        <img src="Batiste.1.jpg" class="hover-img" alt="Dress 3 Hover">
-        Batiste
-      </div>
-      <div class="card">
-        <img src="Artizia.jpg" class="main-img" alt="Dress 1">
-        <img src="Artizia.1.jpg" class="hover-img" alt="Dress 1 Hover">
-        Artizia
-      </div>
-      <div class="card">
-        <img src="Ross.jpg" class="main-img" alt="Dress 1">
-        <img src="Ross.1.jpg" class="hover-img" alt="Dress 1 Hover">
-        Ross
-        </div>
-        <div class="card">
-          <img src="Miller.jpg" class="main-img" alt="Dress 1">
-          <img src="Miller.1.jpg" class="hover-img" alt="Dress 1 Hover">
-          Miller
-        </div>
-        <div class="card">
-          <img src="Narice.jpg" class="main-img" alt="Dress 1">
-          <img src="Narice.1.jpg" class="hover-img" alt="Dress 1 Hover">
-          Narice
-        </div>
-        <div class="card">
-          <img src="Sheyniss.jpg" class="main-img" alt="Dress 1">
-          <img src="Sheyniss.1.jpg" class="hover-img" alt="Dress 1 Hover">
-          Sheyniss
-        </div>
-        <div class="card">
-          <img src="Zara.jpg" class="main-img" alt="Dress 1">
-          <img src="Zara.1.jpg" class="hover-img" alt="Dress 1 Hover">
-          Zara
-        </div>
-        <div class="card">
-          <img src="Kennedy.jpg" class="main-img" alt="Dress 1">
-          <img src="Kennedy.1.jpg" class="hover-img" alt="Dress 1 Hover">
-          Kennedy
-        </div>
-        <div class="card">
-            <img src="Cami.jpg" class="main-img" alt="Dress 1">
-            <img src="Cami.1.jpg" class="hover-img" alt="Dress 1 Hover">
-            Cami
-        </div>
-        <div class="card">
-          <img src="Tucker.jpg" class="main-img" alt="Dress 1">
-          <img src="Tucker.1.jpg" class="hover-img" alt="Dress 1 Hover">
-          Riva
-        </div>
-    </div>
-  </main>
-</body>"
+  <script src="/JS/Script.js"></script>
+  </body>
 </html>

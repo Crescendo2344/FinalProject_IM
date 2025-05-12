@@ -168,6 +168,36 @@
   .link a:hover{
     opacity: 0.65;
   }
+
+  #link-A-line{
+    justify-content: center;
+    margin-left: -10px;
+  }
+
+  #link-Ballgown{
+    justify-content: center;
+    margin-left: -25px;
+  }
+
+  #link-Mermaid{
+    justify-content: center;
+    margin-left: -20px;
+  }
+
+  #link-Sheath{
+    justify-content: center;
+    margin-left: -15px;
+  }
+
+  #link-Faf{
+    justify-content: center;
+    margin-left: -35px;
+  }
+
+  #link-Fwo{
+    justify-content: center;
+    margin-left: -70px;
+  }
   .top-container {
     position: absolute;
     display: flex;
