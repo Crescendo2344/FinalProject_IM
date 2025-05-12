@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Elegant Bridal</title>
+  <title>Contact Us - Elegant Bridal</title>
   <link rel="icon" type="image/icon" href="/Images/favicon.png">
   <link rel="stylesheet" href="/CSS/Home.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <div class="hero-section">
-      <div class="navbar"> 
+  <div class="hero-section-contact">
+  <div class="navbar"> 
         <div class="nav-left">
           <div class="dropdown">
             <button class="dropbtn"> <a>Brides   <i class="fa fa-caret-down"></i></a> </a> </button>
@@ -52,75 +52,85 @@
           <a href="#"><i class="fa-solid fa-user" alt="User" ></i></a>
         </div>
       </div>
-      
-      <div class="text-container">
-        <h1>Your Dream Wedding Dress Starts Here</h1>
-        <p>
-          With our stunning collection of wedding dresses, it will be easy for you to find your perfect match.
-          At Elegant bridal shop, we offer a rich gown selection to cater to any taste, from statement mini to romantic ball gowns.
-          Your dream dress is awaiting you at Elegant Bridal, the best bridal salon in the heart of Cebu.
-        </p>
-        <button class="explore-btn">Explore Our Collections</button>
-      </div>
+      <div class="link-Contact"><a href="Home.html">Home</a> >> Contact</div>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you! Reach out to us with any questions.</p>
     </div>
 
-    <div class="ImageGallery">
-      <div class="ImageGroup">
-        <div class="ImageContainer">
-          <img src="/Images/pic1.jpg" alt="L'Unico">
-          <div class="caption">
-            <span>Fit-and-Flare · North</span>
-            <span class="arrow">→</span>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Our Information</h2>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Location</h3>
+            <p>Cebu I.T. Park 5th Floor, Ayala Malls Central Bloc, Brgy. Lahug, Cebu City</p>
           </div>
         </div>
-        <div class="ImageContainer">
-          <img src="/Images/pic2.jpg" alt="Less is More IV">
-          <div class="caption">
-            <span>Ball Gown · Merida</span>
-            <span class="arrow">→</span>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>(+63) 9305424723</p>
           </div>
         </div>
-        <div class="ImageContainer">
-          <img src="/Images/pic3.jpg" alt="Gemini">
-          <div class="caption">
-            <span>Mermaid · Miller</span>
-            <span class="arrow">→</span>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>info@elegantbridal.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <p>Saturday: 10:00 AM - 4:00 PM</p>
+            <p>Sunday: Closed</p>
           </div>
         </div>
       </div>
-      <div class="ImageGroup">
-        <div class="ImageContainer">
-          <img src="/Images/pic4.jpg" alt="L'Unico">
-          <div class="caption">
-            <span>A-line · Auden</span>
-            <span class="arrow">→</span>
+
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
           </div>
-        </div>
-        <div class="ImageContainer">
-          <img src="/Images/pic5.jpg" alt="Less is More IV">
-          <div class="caption">
-            <span>A-line · Coral</span>
-            <span class="arrow">→</span>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
           </div>
-        </div>
-        <div class="ImageContainer">
-          <img src="/Images/pic6.jpg" alt="Gemini">
-          <div class="caption">
-            <span>Ball Gown · Bosphor</span>
-            <span class="arrow">→</span>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
       </div>
     </div>
-      <script src="/JS/Script.js"></script>
-  </body>
+  </div>
 
   <footer>
     <div class="footer-column">
       <div class="footer-logo">Elegant Bridal</div>
       <div class="footer-contact">
-          Cebu I.T. Park 5th Floor, <br>
-          Ayala Malls Central Bloc, Brgy. Lahug, Cebu City<br>
+        Cebu I.T. Park 5th Floor, <br>
+        Ayala Malls Central Bloc, Brgy. Lahug, Cebu City<br>
         <strong>(+63) 9305424723</strong> 
       </div>
     </div>
@@ -140,7 +150,7 @@
     <div class="footer-column">
       <h4>Information</h4>
       <ul>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Stories</a></li>
         <li><a href="#">Reviews</a></li>
@@ -149,11 +159,14 @@
       </ul>
 
       <div class="footer-icons">
-        <a href="https://www.instagram.com/elegantbridal2002?igsh=dWxuZ2dqaG0weG9r" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@elegantbridal2002?_t=ZS-8wIB1r3f4nS&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/elegantbridal2002" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@elegantbridal2002" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://www.youtube.com/@elegantbridal2002" target="_blank"><i class="fa-brands fa-youtube"></i></a>
       </div>
     </div>
   </footer>
+
+  <script src="/JS/Script.js"></script>
+</body>
 </html>

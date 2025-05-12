@@ -18,6 +18,11 @@
     color: #000;
     font-family: 'Playfair Display', serif;
   }
+
+  .hero-section-contact {
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display', serif;
+  }
   
  
   .navbar {
@@ -38,6 +43,22 @@
     transition: opacity 0.30s;
   }
   .nav-right a:hover {
+    opacity: 0.65;
+  }
+
+  .link-Contact {
+    position: absolute;
+    letter-spacing: 2px;
+    color: grey;
+    left: 43.8%;
+  }
+
+  .link-Contact a {
+    text-decoration: none;
+    color: #000;
+    transition: opacity 0.30s;
+  }
+  .link-Contact a:hover{
     opacity: 0.65;
   }
   
@@ -356,6 +377,114 @@
     opacity: 0.6;
   }
   
-  
+   .contact-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    
+    .contact-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 0 20px;
+    }
+    
+    .contact-header h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .contact-header p {
+      font-size: 18px;
+      color: #666;
+    }
+    
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+    .contact-info, .contact-form {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-info h2, .contact-form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+    
+    .info-item i {
+      font-size: 20px;
+      margin-right: 15px;
+      color: #333;
+    }
+    
+    .info-item h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .info-item p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .submit-btn {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+      background-color: #555;
+    }
  
   
