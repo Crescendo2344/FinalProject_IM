@@ -41,6 +41,39 @@
     opacity: 0.65;
   }
   
+  #search-bar {
+    display: none;
+    position: absolute; 
+    background: white;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  #search-bar input {
+    padding: 8px;
+    font-size: 14px;
+    width: 1296.9px;
+    height: 45.5px;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+  }
+  
+  #search-bar i {
+    margin-left: 8px;
+    cursor: pointer;
+    color: #666;
+  }
+
+  #close-search:hover {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    color: black;
+  }
+
   .dropdown {
     position: relative;
     display: inline-block;
@@ -250,4 +283,79 @@
     transform: translateX(-15px);
     transition: opacity 0.3s ease;
   }
+
+  footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: inherit;
+
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  .footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ccc;
+    text-decoration: underline;
+  }
+  
+  .footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .footer-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-icons i:hover {
+    opacity: 0.6;
+  }
+  
+  
+ 
   

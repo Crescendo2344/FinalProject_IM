@@ -43,7 +43,11 @@
         <div class="logo"><a href="Home.html">ELEGANT BRIDAL</a></div>
   
         <div class="nav-right">
-          <a href="#"><i class="fa-solid fa-magnifying-glass" alt="Search"></i></a>
+          <a id="search-icon"><i class="fa-solid fa-magnifying-glass" alt="Search"></i></a>
+          <div id="search-bar">
+            <input type="text" placeholder="Search for products..." />
+            <i class="fa-solid fa-times" id="close-search"></i>
+          </div>
           <a href="#"><i class="fa-solid fa-cart-shopping" alt="Cart"></i></a>
           <a href="#"><i class="fa-solid fa-user" alt="User" ></i></a>
         </div>
@@ -88,14 +92,14 @@
         <div class="ImageContainer">
           <img src="/Images/pic4.jpg" alt="L'Unico">
           <div class="caption">
-            <span>Special Edition · WONA</span>
+            <span>A-line · Auden</span>
             <span class="arrow">→</span>
           </div>
         </div>
         <div class="ImageContainer">
           <img src="/Images/pic5.jpg" alt="Less is More IV">
           <div class="caption">
-            <span>Venus · Eva Lendel</span>
+            <span>A-line · Coral</span>
             <span class="arrow">→</span>
           </div>
         </div>
@@ -108,8 +112,48 @@
         </div>
       </div>
     </div>
-
-
-  
+      <script src="/JS/Script.js"></script>
   </body>
+
+  <footer>
+    <div class="footer-column">
+      <div class="footer-logo">Elegant Bridal</div>
+      <div class="footer-contact">
+          Cebu I.T. Park 5th Floor, <br>
+          Ayala Malls Central Bloc, Brgy. Lahug, Cebu City<br>
+        <strong>(+63) 9305424723</strong> 
+      </div>
+    </div>
+  
+    <div class="footer-column">
+      <h4>Wedding Dresses</h4>
+      <ul>
+        <li><a href="A-line.html">A-line</a></li>
+        <li><a href="Ballgown.html">Ball Gown</a></li>
+        <li><a href="Mermaid.html">Mermaid</a></li>
+        <li><a href="Sheath.html">Sheath</a></li>
+        <li><a href="Fit-and-flare.html">Fit and flare</a></li>
+        <li><a href="Fitted-with-overskirt.html">Fitted with overskirt</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Stories</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Size chart</a></li>
+      </ul>
+
+      <div class="footer-icons">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-tiktok"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </div>
+  </footer>
 </html>
