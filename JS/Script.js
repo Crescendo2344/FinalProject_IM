@@ -93,27 +93,49 @@ function loadCart() {
 function setupAddToCartButtons() {
   const buttons = document.querySelectorAll('.Cartbutton');
 
-  buttons.forEach((button, index) => {
+  buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const container = button.closest('.ImageContainer');
       const name = container.querySelector('.Dressname').textContent;
       const image = container.querySelector('.img1').src;
-      const price = 299.00; 
-      const size = 'M';     
+      const price = 299.00;  
+      const size = 'M';      
       const quantity = 1;
 
       const newItem = { name, image, price, size, quantity };
 
       
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(newItem);
+
+      
+      const existingIndex = cart.findIndex(item => item.name === newItem.name && item.size === newItem.size);
+
+      if (existingIndex > -1) {
+        
+        cart[existingIndex].quantity += 1;
+      } else {
+        
+        cart.push(newItem);
+      }
+
+      
       localStorage.setItem('cart', JSON.stringify(cart));
 
-      alert(`${name} added to cart.`);
+      
+      showToast(`🔔 ${newItem.name} added to cart!!`);
     });
   });
 }
 
+function showToast(message) {
+  const toast = document.querySelector('.toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('A-line.html')) {
@@ -132,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAddToCartButtons();
   }
 
-  if (window.location.pathname.includes('Collection-3.html')) {
+  if (window.location.pathname.includes('Collections-3.html')) {
     setupAddToCartButtons();
   }
 
