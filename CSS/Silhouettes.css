@@ -181,7 +181,7 @@
 
   #link-SC{
     justify-content: center;
-    margin-left: -45px;
+    margin-left: -43px;
   }
   #link-A-line{
     justify-content: center;
@@ -528,7 +528,6 @@ input[type="checkbox"]:checked {
     .cart-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     position: absolute;
     top: 20vh;
@@ -580,9 +579,16 @@ input[type="checkbox"]:checked {
    }
 
    .cart-summary {
+    
    text-align: right;
    margin-top: 40px;
    }
+
+   .cart-header {
+    min-height: 275px; 
+    min-width: 600px;
+    position: relative;
+    }
 
    .checkout-btn {
     margin-top: 10px;
@@ -595,12 +601,22 @@ input[type="checkbox"]:checked {
     }
 
    .checkout-btn:hover {
-   background-color: #333;
-   }
+    background-color: #333;
 
-  .payment-method {
-   margin-top: 30px;
-   border-top: 1px solid #ccc;
-   padding-top: 20px;
    }
+    .continue-shopping-btn {
+
+    margin-top: 10px;
+    padding: 5px 5px;
+    width: 200px;
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    }
+
+    .continue-shopping-btn:hover {
+    background-color: hsl(0, 0%, 85%);
+    }
+
   

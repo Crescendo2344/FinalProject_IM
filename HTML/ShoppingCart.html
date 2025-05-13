@@ -6,96 +6,79 @@
   <link rel="icon" type="image/icon" href="/Images/favicon.png">
   <link rel="stylesheet" href="/CSS/Silhouettes.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="hero-section">
-      <div class="navbar"> 
-        <div class="nav-left">
-          <div class="dropdown">
-            <button class="dropbtn"> <a>Brides    <i class="fa fa-caret-down"></i></a> </button>
-              <div class="mega-dropdown">
-                <div class="dropdown-column">
-                   <h4>By Silhouettes</h4>
-                   <a href="A-line.html">A-line</a>
-                   <a href="Ballgown.html">Ball Gown</a>
-                   <a href="Mermaid.html">Mermaid</a>
-                   <a href="Sheath.html">Sheath</a>
-                   <a href="Fit-and-flare.html">Fit-and-flare</a>
-                   <a href="Fitted-with-overskirt.html">Fitted with overskirt</a>
-                </div>
-                <div class="dropdown-column">
-                   <h4>By Size</h4>
-                   <a href="#">XS</a>
-                   <a href="#">S</a>
-                   <a href="#">M</a>
-                   <a href="#">L</a>
-                   <a href="#">XL</a>
-                   <a href="#">XXL</a>
-                </div>
-              </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar"> 
+      <div class="nav-left">
+        <div class="dropdown">
+          <button class="dropbtn"><a>Brides <i class="fa fa-caret-down"></i></a></button>
+          <div class="mega-dropdown">
+            <div class="dropdown-column">
+              <h4>By Silhouettes</h4>
+              <a href="A-line.html">A-line</a>
+              <a href="Ballgown.html">Ball Gown</a>
+              <a href="Mermaid.html">Mermaid</a>
+              <a href="Sheath.html">Sheath</a>
+              <a href="Fit-and-flare.html">Fit-and-flare</a>
+              <a href="Fitted-with-overskirt.html">Fitted with overskirt</a>
+            </div>
+            <div class="dropdown-column">
+              <h4>By Size</h4>
+              <a href="#">XS</a>
+              <a href="#">S</a>
+              <a href="#">M</a>
+              <a href="#">L</a>
+              <a href="#">XL</a>
+              <a href="#">XXL</a>
+            </div>
           </div>
-          <button class="dropbtn"><a href="Contact.html">Contact</a></button>
-          
         </div>
-  
-        <div class="logo"><a href="Home.html">ELEGANT BRIDAL</a></div>
-  
-        <div class="nav-right">
-          <a id="search-icon"><i class="fa-solid fa-magnifying-glass" alt="Search"></i></a>
-          <div id="search-bar">
-            <input type="text" placeholder="Search for products..." />
-            <i class="fa-solid fa-times" id="close-search"></i>
-          </div>
-          <a href="ShoppingCart.html"><i class="fa-solid fa-cart-shopping" alt="Cart"></i></a>
-          <a href="#"><i class="fa-solid fa-user" alt="User" ></i></a>
+        <button class="dropbtn"><a href="Contact.html">Contact</a></button>
+      </div>
+
+      <div class="logo"><a href="Home.html">ELEGANT BRIDAL</a></div>
+
+      <div class="nav-right">
+        <a id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <div id="search-bar">
+          <input type="text" placeholder="Search for products..." />
+          <i class="fa-solid fa-times" id="close-search"></i>
         </div>
-       </div>
-      
-       <div class="link" id="link-SC"><a href="Home.html">Home</a> >> Shopping Cart</div>
-  
-
-       <div class="cart-container">
-    <h2>Your Shopping Cart</h2>
-    <div class="cart-header">
-      <h1>Items in your cart</h1>
-    <div class="cart-item">
-      <img src="/Images/Merida1.jpg" alt="Dress Image" class="product-image">
-
-      <div class="item-details">
-        <h3 class="product-name">Merida Ball Gown Dress</h3>
-        <p class="product-price">$299.00</p>
-        <label for="size">Size:</label>
-        <select class="size-selector">
-          <option>XS</option>
-          <option>S</option>
-          <option selected>M</option>
-          <option>L</option>
-          <option>XL</option>
-          <option>XXL</option>
-        </select>
-
-        
-        <label for="quantity">Qty:</label>
-        <input type="number" class="quantity-selector" min="1" value="1">
-
-        
-        <button class="remove-item-btn"><i class="fa fa-trash"></i> Remove</button>
+        <a href="ShoppingCart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#"><i class="fa-solid fa-user"></i></a>
       </div>
     </div>
 
     
+    <div class="link" id="link-SC"><a href="Home.html">Home</a> >> Shopping Cart</div>
 
     
-    <div class="cart-summary">
-      <h2>Total: <span id="cart-total">$299.00</span></h2>
-      <button class="checkout-btn">Proceed to Checkout</button>
-    </div>
+    <div class="cart-container">
+      <h2>Your Shopping Cart</h2>
 
-    <button class="continue-shopping-btn"><i class="fa fa-arrow-left"></i> Continue Shopping</button>
-  </div>
+      
+      <div class="cart-header" id="cart-items">
+        
+        <h1>Items in your cart</h1>
+      </div>
+
+     
+      <div class="cart-summary">
+        <h2>Total: <span id="cart-total">$0.00</span></h2>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+
+      
+      <button class="continue-shopping-btn" onclick="window.location.href='A-line.html'">
+        <i class="fa fa-arrow-left"></i> Continue Shopping
+      </button>
     </div>
   </div>
-    <script src="/JS/Script.js"></script>
+
+  <script src="/JS/Script.js"></script>
 </body>
 </html>

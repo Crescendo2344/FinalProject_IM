@@ -23,84 +23,136 @@ const searchIcon = document.getElementById('search-icon');
   }
 
   
-let cart = [];
 
-    function addToCart(productName, productPrice) {
-      const existing = cart.find(item => item.name === productName);
-      if (existing) {
-        existing.quantity++;
-      } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-      }
-      updateCartSidebar();
-    }
+function loadCart() {
+  const cartContainer = document.querySelector('.cart-header');
+  const cartSummary = document.querySelector('.cart-summary');
+  let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-    function removeFromCart(productName) {
-      cart = cart.filter(item => item.name !== productName);
-      updateCartSidebar();
-    }
-
-    function updateCartSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      const overlay = document.querySelector('.sidebar-overlay');
-      sidebar.classList.add('show');
-      overlay.classList.add('show');
-
-      let html = '<h2>Your Cart</h2><ul>';
-      cart.forEach(item => {
-        html += `
-          <li style="margin-bottom: 10px;">
-            ${item.name} (${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}
-            <button onclick="removeFromCart('${item.name}')" style="margin-left: 10px;">Remove</button>
-          </li>
-        `;
-      });
-
-      html += '</ul>';
-      html += `<p><strong>Total: $${getTotal()}</strong></p>`;
-      html += '<button class="close-btn" onclick="closeSidebar()">×</button>';
-      sidebar.innerHTML = html;
-    }
-
-    function getTotal() {
-      return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-    }
-
-    function closeSidebar() {
-      document.querySelector('.sidebar').classList.remove('show');
-      document.querySelector('.sidebar-overlay').classList.remove('show');
-    }
-
-    function toggleCart() {
-      const sidebar = document.querySelector('.sidebar');
-      const overlay = document.querySelector('.sidebar-overlay');
-      sidebar.classList.toggle('show');
-      overlay.classList.toggle('show');
-    }
-
-    document.getElementById("search-icon").addEventListener("click", () => {
-      document.getElementById("search-bar").style.display = "flex";
-    });
-
-    document.getElementById("close-search").addEventListener("click", () => {
-      document.getElementById("search-bar").style.display = "none";
-    });
-
-    function updateTotal() {
+  
+  cartContainer.innerHTML = `<h1>Items in your cart</h1>`;
+  
   let total = 0;
-  const items = document.querySelectorAll(".cart-item");
-  items.forEach(item => {
-    const price = parseFloat(item.querySelector(".product-price").textContent.replace("$", ""));
-    const qty = parseInt(item.querySelector(".quantity-selector").value);
-    total += price * qty;
+
+  
+  cartItems.forEach((item, index) => {
+    total += item.price * item.quantity;
+
+    const itemDiv = document.createElement('div');
+    itemDiv.classList.add('cart-item');
+    itemDiv.innerHTML = `
+      <img src="${item.image}" alt="Dress Image" class="product-image">
+      <div class="item-details">
+        <h3 class="product-name">${item.name}</h3>
+        <p class="product-price">$${item.price.toFixed(2)}</p>
+        <label for="size">Size:</label>
+        <select class="size-selector">
+          <option ${item.size === 'XS' ? 'selected' : ''}>XS</option>
+          <option ${item.size === 'S' ? 'selected' : ''}>S</option>
+          <option ${item.size === 'M' ? 'selected' : ''}>M</option>
+          <option ${item.size === 'L' ? 'selected' : ''}>L</option>
+          <option ${item.size === 'XL' ? 'selected' : ''}>XL</option>
+          <option ${item.size === 'XXL' ? 'selected' : ''}>XXL</option>
+        </select>
+
+        <label for="quantity">Qty:</label>
+        <input type="number" class="quantity-selector" min="1" value="${item.quantity}" data-index="${index}">
+
+        <button class="remove-item-btn" data-index="${index}"><i class="fa fa-trash"></i> Remove</button>
+      </div>
+    `;
+    cartContainer.appendChild(itemDiv);
   });
-  document.getElementById("cart-total").textContent = "$" + total.toFixed(2);
+
+  
+  document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+  
+  
+  document.querySelectorAll('.remove-item-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const index = e.currentTarget.getAttribute('data-index');
+      cartItems.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      loadCart();
+    });
+  });
+
+  
+  document.querySelectorAll('.quantity-selector').forEach(input => {
+    input.addEventListener('input', (e) => {
+      const index = e.currentTarget.getAttribute('data-index');
+      const newQty = parseInt(e.target.value) || 1;
+      cartItems[index].quantity = newQty;
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      loadCart();
+    });
+  });
 }
 
-// Remove item from cart
-document.querySelectorAll(".remove-item-btn").forEach(btn => {
-  btn.addEventListener("click", function () {
-    this.closest(".cart-item").remove();
-    updateTotal();
+
+function setupAddToCartButtons() {
+  const buttons = document.querySelectorAll('.Cartbutton');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const container = button.closest('.ImageContainer');
+      const name = container.querySelector('.Dressname').textContent;
+      const image = container.querySelector('.img1').src;
+      const price = 299.00; 
+      const size = 'M';     
+      const quantity = 1;
+
+      const newItem = { name, image, price, size, quantity };
+
+      
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(newItem);
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${name} added to cart.`);
+    });
   });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.includes('A-line.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Ballgown.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Collections.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Collections-2.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Collection-3.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Fit-and-flare.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Fitted-with-overskirt.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Mermaid.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('Sheath.html')) {
+    setupAddToCartButtons();
+  }
+
+  if (window.location.pathname.includes('ShoppingCart.html')) {
+    loadCart();
+  }
 });
