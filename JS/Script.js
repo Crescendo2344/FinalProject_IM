@@ -178,3 +178,57 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCart();
   }
 });
+
+
+const form = document.getElementById('checkout-form');
+const cartSummaryDiv = document.getElementById('cart-summary');
+
+
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+function renderCartSummary() {
+  if (cart.length === 0) {
+    cartSummaryDiv.innerHTML = '<p>Your cart is empty.</p>';
+    return;
+  }
+
+  let total = 0;
+  const itemsHtml = cart.map(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    return `
+      <div>
+        ${item.name} (Size: ${item.size}) - ${item.quantity} × $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}
+      </div>
+    `;
+  }).join('');
+
+  cartSummaryDiv.innerHTML = itemsHtml + `<strong>Total: $${total.toFixed(2)}</strong>`;
+}
+
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const payment = document.querySelector('input[name="payment"]:checked');
+
+  if (!name || !email || !address || !payment) {
+    alert('Please fill in all fields and select a payment method.');
+    return;
+  }
+
+  
+  form.style.display = 'none';
+  document.getElementById('confirmation').style.display = 'block';
+
+  
+  localStorage.removeItem('cart');
+});
+
+renderCartSummary();
+const confirmationMessage = document.getElementById('confirmation-message');
+const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
