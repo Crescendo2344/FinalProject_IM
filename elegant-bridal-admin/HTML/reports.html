@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Bridal - Reports</title>
+  <link rel="icon" type="image/icon" href="images/favicon.png">
+  <link rel="stylesheet" href="/elegant-bridal-admin/CSS/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <h1><i class="fas fa-rings-wedding"></i> ELEGANT BRIDAL</h1>
+        <p>Admin Dashboard</p>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="/elegant-bridal-admin/HTML/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li class="menu-dropdown">
+            <a href="gowns.html"><i class="fas fa-tshirt"></i> Gown Management</i></a>
+            <ul class="dropdown-content">
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html"><i class="fas fa-list"></i> All Gowns</a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=add"><i class="fas fa-plus-circle"></i> Add New Gown</a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=categories"><i class="fas fa-tags"></i> Categories</a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=inventory"><i class="fas fa-boxes"></i> Inventory</a></li>
+            </ul>
+          </li>
+          <li><a href="/elegant-bridal-admin/HTML/orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/customers.html"><i class="fas fa-users"></i> Customers</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/suppliers.html"><i class="fas fa-truck"></i> Suppliers</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/reports.html" class="active"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="header-left">
+          <h2>Reports & Analytics</h2>
+          <div class="breadcrumb">
+            <a href="/elegant-bridal-admin/HTML/index.html">Home</a> / <span>Reports</span>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Search reports...">
+            <i class="fas fa-search"></i>
+          </div>
+          
+          <div class="admin-profile">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin">
+            <span>Admin User</span>
+            <i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Reports Content -->
+      <div class="order-content">
+        <div class="content-card">
+          <div class="card-header">
+            <h3>Sales Reports</h3>
+            <div>
+              <select id="reportPeriod" class="form-control" style="width: 150px; display: inline-block;">
+                <option value="7days">Last 7 Days</option>
+                <option value="30days">Last 30 Days</option>
+                <option value="90days">Last 90 Days</option>
+                <option value="month">This Month</option>
+                <option value="quarter">This Quarter</option>
+                <option value="year">This Year</option>
+                <option value="custom">Custom Range</option>
+              </select>
+              <button class="btn" id="generateReport">Generate</button>
+              <button class="btn" id="exportReport">Export</button>
+            </div>
+          </div>
+          
+          <div id="customDateRange" style="display: none; margin-bottom: 20px;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" class="form-control">
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-container" style="position: relative; height: 300px; margin-bottom: 30px;">
+            <canvas id="salesChart"></canvas>
+          </div>
+          
+          <div class="chart-container" style="position: relative; height: 300px; margin-bottom: 30px;">
+            <canvas id="gownCategoryChart"></canvas>
+          </div>
+        </div>
+        
+        <div class="content-grid">
+          <div class="content-card">
+            <div class="card-header">
+              <h3>Top Selling Gowns</h3>
+              <button class="btn btn-outline" id="refreshTopGowns">Refresh</button>
+            </div>
+            <div class="table-responsive">
+              <table id="topGownsTable">
+                <thead>
+                  <tr>
+                    <th>Gown</th>
+                    <th>Category</th>
+                    <th>Units Sold</th>
+                    <th>Revenue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Filled by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="content-card">
+            <div class="card-header">
+              <h3>Customer Demographics</h3>
+              <button class="btn btn-outline" id="refreshDemographics">Refresh</button>
+            </div>
+            <div class="chart-container" style="position: relative; height: 250px;">
+              <canvas id="demographicsChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  
+</body>
+</html>

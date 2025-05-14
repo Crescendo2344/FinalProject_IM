@@ -1,0 +1,125 @@
+/* Orders Specific Styles */
+.order-content {
+  padding: 30px;
+}
+
+.order-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.filter-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-range span {
+  color: var(--dark-gray);
+}
+
+/* Order Detail Modal */
+.modal-body {
+  padding: 20px 0;
+}
+
+.order-detail-section {
+  margin-bottom: 20px;
+}
+
+.order-detail-section h4 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--medium-gray);
+  padding-bottom: 5px;
+}
+
+.order-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.order-items th, .order-items td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.order-items th {
+  background-color: var(--light-gray);
+}
+
+.order-summary {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-totals {
+  width: 300px;
+  border-collapse: collapse;
+}
+
+.order-totals td {
+  padding: 8px;
+  text-align: right;
+}
+
+.order-totals tr:last-child td {
+  font-weight: bold;
+  border-top: 1px solid var(--medium-gray);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid var(--medium-gray);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+.page-numbers button {
+  min-width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--medium-gray);
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-numbers button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}

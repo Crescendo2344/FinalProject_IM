@@ -212,6 +212,11 @@
     justify-content: center;
     margin-left: -70px;
   }
+
+  #link-Check{
+    justify-content: center;
+    margin-left: -85px;
+  }
   .top-container {
     position: absolute;
     display: flex;
@@ -540,20 +545,26 @@ input[type="checkbox"]:checked {
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
-    .cart-container2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+   .cart-container1 {
     position: absolute;
     top: 20vh;
     right: 10vw;
-    max-width: 350px;
-    overflow-x: hidden;
+    width: 350px;
     background: white;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    height: 50vh; 
+    overflow-x: hidden;
+    overflow-y: auto; 
+   }
+
+   .cart-container1::-webkit-scrollbar {
+    width: 5px;
+    background: hsl(0, 0%, 50%);
+    border-radius: 10px;
     }
+
 
     .cart-item {
     display: flex;
@@ -620,21 +631,6 @@ input[type="checkbox"]:checked {
 
    }
 
-    .Atc-btn {
-    margin-top: 10px;
-    padding: 5px 24px;
-    background-color: #000;
-    color: white;
-    border: none;
-    width: fit-content;
-    border-radius: 5px;
-    cursor: pointer;
-    }
-
-   .Atc-btn:hover {
-    background-color: #333;
-
-   }
     .continue-shopping-btn {
 
     margin-top: 10px;
@@ -648,27 +644,6 @@ input[type="checkbox"]:checked {
 
     .continue-shopping-btn:hover {
     background-color: hsl(0, 0%, 85%);
-    }
-
-    .similar-item-details {
-    
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 0;
-  
-    }
-
-    .cart-item-similar{
-    display: flex;  
-    gap: 20px;
-    padding: 15px 0;
-    }
-
-    .cart-item-similar img {
-    width: 100px;
-    height: auto;
-    border-radius: 6px;
     }
 
     .toast {
@@ -746,4 +721,37 @@ input[type="email"] {
   padding: 15px;
   border-radius: 8px;
   margin-top: 10px;
+}
+
+
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+}
+
+.order-entry {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px; 
+  transition: all 0.3s ease;
+}
+
+.order-title {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0; 
+  padding: 5px 0; 
+}
+
+.order-details {
+  display: none;
+  margin-top: 8px; 
+  padding: 8px; 
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.order-entry:hover .order-details {
+  display: block;
 }

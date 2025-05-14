@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Bridal - Settings</title>
+  <link rel="icon" type="image/icon" href="images/favicon.png">
+  <link rel="stylesheet" href="/elegant-bridal-admin/CSS/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <h1><i class="fas fa-rings-wedding"></i> ELEGANT BRIDAL</h1>
+        <p>Admin Dashboard</p>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="/elegant-bridal-admin/HTML/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li class="menu-dropdown">
+            <a href="gowns.html"><i class="fas fa-tshirt"></i> Gown Management</i></a>
+            <ul class="dropdown-content">
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html"><i class="fas fa-list"></i> All Gowns</a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=add"><i class="fas fa-plus-circle"></i> Add New Gown</a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=categories"><i class="fas fa-tags"></i> Categories</a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=inventory"><i class="fas fa-boxes"></i> Inventory</a></li>
+            </ul>
+          </li>
+          <li><a href="/elegant-bridal-admin/HTML/orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/customers.html"><i class="fas fa-users"></i> Customers</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/suppliers.html"><i class="fas fa-truck"></i> Suppliers</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/settings.html" class="active"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="header-left">
+          <h2>System Settings</h2>
+          <div class="breadcrumb">
+            <a href="/elegant-bridal-admin/HTML/index.html">Home</a> / <span>Settings</span>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Search settings...">
+            <i class="fas fa-search"></i>
+          </div>
+          
+          <div class="admin-profile">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin">
+            <span>Admin User</span>
+            <i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Settings Content -->
+      <div class="order-content">
+        <div class="content-card">
+          <div class="card-header">
+            <h3>General Settings</h3>
+          </div>
+          
+          <form id="generalSettingsForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="storeName">Store Name</label>
+                <input type="text" id="storeName" class="form-control" value="Elegant Bridal">
+              </div>
+              
+              <div class="form-group">
+                <label for="storeEmail">Store Email</label>
+                <input type="email" id="storeEmail" class="form-control" value="info@elegantbridal.com">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="storePhone">Store Phone</label>
+                <input type="tel" id="storePhone" class="form-control" value="(123) 456-7890">
+              </div>
+              
+              <div class="form-group">
+                <label for="storeAddress">Store Address</label>
+                <textarea id="storeAddress" class="form-control" rows="2">123 Bridal Avenue, Wedding City</textarea>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="timezone">Timezone</label>
+                <select id="timezone" class="form-control">
+                  <option value="GMT-12">(GMT-12:00) International Date Line West</option>
+                  <option value="GMT-8" selected>(GMT-08:00) Pacific Time (US & Canada)</option>
+                  <option value="GMT-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+                  <option value="GMT">(GMT) Greenwich Mean Time: Dublin, Edinburgh, Lisbon, London</option>
+                  <!-- More timezones would be added here -->
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="dateFormat">Date Format</label>
+                <select id="dateFormat" class="form-control">
+                  <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                  <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                  <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="resetGeneralSettings">Reset</button>
+              <button type="submit" class="btn">Save Settings</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="content-card">
+          <div class="card-header">
+            <h3>Payment Settings</h3>
+          </div>
+          
+          <form id="paymentSettingsForm">
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="enableCreditCard" checked> Accept Credit Cards
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="enablePaypal" checked> Accept PayPal
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="enableBankTransfer"> Accept Bank Transfers
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="enableCashOnDelivery"> Accept Cash on Delivery
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label for="currency">Currency</label>
+              <select id="currency" class="form-control">
+                <option value="USD" selected>US Dollar ($)</option>
+                <option value="EUR">Euro (€)</option>
+                <option value="GBP">British Pound (£)</option>
+                <option value="CAD">Canadian Dollar (C$)</option>
+                <option value="AUD">Australian Dollar (A$)</option>
+              </select>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="resetPaymentSettings">Reset</button>
+              <button type="submit" class="btn">Save Settings</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="content-card">
+          <div class="card-header">
+            <h3>User Account</h3>
+          </div>
+          
+          <form id="accountSettingsForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adminName">Full Name</label>
+                <input type="text" id="adminName" class="form-control" value="Admin User">
+              </div>
+              
+              <div class="form-group">
+                <label for="adminEmail">Email</label>
+                <input type="email" id="adminEmail" class="form-control" value="admin@elegantbridal.com">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="currentPassword">Current Password</label>
+              <input type="password" id="currentPassword" class="form-control">
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" id="newPassword" class="form-control">
+              </div>
+              
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="form-control">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="adminPhoto">Profile Photo</label>
+              <input type="file" id="adminPhoto" class="form-control">
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="resetAccountSettings">Reset</button>
+              <button type="submit" class="btn">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  
+</body>
+</html>

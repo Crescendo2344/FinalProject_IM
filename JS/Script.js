@@ -36,36 +36,44 @@ function loadCart() {
 
   
   cartItems.forEach((item, index) => {
-    total += item.price * item.quantity;
+  total += item.price * item.quantity;
 
-    const itemDiv = document.createElement('div');
-    itemDiv.classList.add('cart-item');
-    itemDiv.innerHTML = `
-      <img src="${item.image}" alt="Dress Image" class="product-image">
-      <div class="item-details">
-        <h3 class="product-name">${item.name}</h3>
-        <p class="product-price">$${item.price.toFixed(2)}</p>
-        <label for="size">Size:</label>
-        <select class="size-selector">
-          <option ${item.size === 'XS' ? 'selected' : ''}>XS</option>
-          <option ${item.size === 'S' ? 'selected' : ''}>S</option>
-          <option ${item.size === 'M' ? 'selected' : ''}>M</option>
-          <option ${item.size === 'L' ? 'selected' : ''}>L</option>
-          <option ${item.size === 'XL' ? 'selected' : ''}>XL</option>
-          <option ${item.size === 'XXL' ? 'selected' : ''}>XXL</option>
-        </select>
+  const itemDiv = document.createElement('div');
+  itemDiv.classList.add('cart-item');
+  itemDiv.innerHTML = `
+    <img src="${item.image}" alt="Dress Image" class="product-image">
+    <div class="item-details">
+      <h3 class="product-name">${item.name}</h3>
+      <p class="product-price">₱${item.price.toFixed(2)}</p>
+      <p class="product-color"><strong>Color:</strong> ${item.color || 'Default'}</p>
 
-        <label for="quantity">Qty:</label>
-        <input type="number" class="quantity-selector" min="1" value="${item.quantity}" data-index="${index}">
+      <label for="color">Color:</label>
+      <select class="color-selector" data-index="${index}">
+        <option ${item.color === 'White' ? 'selected' : ''}>White</option>
+        <option ${item.color === 'Ivory' ? 'selected' : ''}>Ivory</option>
+        <option ${item.color === 'Blush' ? 'selected' : ''}>Blush</option>
+      </select>
 
-        <button class="remove-item-btn" data-index="${index}"><i class="fa fa-trash"></i> Remove</button>
-      </div>
-    `;
-    cartContainer.appendChild(itemDiv);
-  });
+      <label for="size">Size:</label>
+      <select class="size-selector">
+        <option ${item.size === 'XS' ? 'selected' : ''}>XS</option>
+        <option ${item.size === 'S' ? 'selected' : ''}>S</option>
+        <option ${item.size === 'M' ? 'selected' : ''}>M</option>
+        <option ${item.size === 'L' ? 'selected' : ''}>L</option>
+        <option ${item.size === 'XL' ? 'selected' : ''}>XL</option>
+        <option ${item.size === 'XXL' ? 'selected' : ''}>XXL</option>
+      </select>
 
+      <label for="quantity">Qty:</label>
+      <input type="number" class="quantity-selector" min="1" value="${item.quantity}" data-index="${index}">
+
+      <button class="remove-item-btn" data-index="${index}"><i class="fa fa-trash"></i> Remove</button>
+    </div>
+  `;
+  cartContainer.appendChild(itemDiv);
+});
   
-  document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('cart-total').textContent = `₱${total.toFixed(2)}`;
   
   
   document.querySelectorAll('.remove-item-btn').forEach(button => {
@@ -76,6 +84,15 @@ function loadCart() {
       loadCart();
     });
   });
+
+  document.querySelectorAll('.color-selector').forEach(select => {
+  select.addEventListener('change', (e) => {
+    const index = e.currentTarget.getAttribute('data-index');
+    cartItems[index].color = e.target.value;
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    loadCart();
+  });
+});
 
   
   document.querySelectorAll('.quantity-selector').forEach(input => {
@@ -98,30 +115,28 @@ function setupAddToCartButtons() {
       const container = button.closest('.ImageContainer');
       const name = container.querySelector('.Dressname').textContent;
       const image = container.querySelector('.img1').src;
-      const price = 299.00;  
-      const size = 'M';      
+      const price = 299.00;
+      const size = 'M'; 
+      const color = 'White'; 
       const quantity = 1;
 
-      const newItem = { name, image, price, size, quantity };
+      const newItem = { name, image, price, size, color, quantity };
 
-      
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      
-      const existingIndex = cart.findIndex(item => item.name === newItem.name && item.size === newItem.size);
+      const existingIndex = cart.findIndex(item =>
+        item.name === newItem.name &&
+        item.size === newItem.size &&
+        item.color === newItem.color
+      );
 
       if (existingIndex > -1) {
-        
         cart[existingIndex].quantity += 1;
       } else {
-        
         cart.push(newItem);
       }
 
-      
       localStorage.setItem('cart', JSON.stringify(cart));
-
-      
       showToast(`🔔 ${newItem.name} added to cart!!`);
     });
   });
@@ -176,7 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (window.location.pathname.includes('ShoppingCart.html')) {
     loadCart();
+    loadOrderHistory();
   }
+
+  if (window.location.pathname.includes('Checkout.html')) {
+  renderCartSummary();
+}
 });
 
 
@@ -198,13 +218,13 @@ function renderCartSummary() {
     const subtotal = item.price * item.quantity;
     total += subtotal;
     return `
-      <div>
-        ${item.name} (Size: ${item.size}) - ${item.quantity} × $${item.price.toFixed(2)} = $${subtotal.toFixed(2)}
-      </div>
-    `;
+  <div>
+    ${item.name} (Size: ${item.size}, Color: ${item.color}) - ${item.quantity} x ₱${item.price.toFixed(2)} = ₱${subtotal.toFixed(2)}
+  </div>
+`;
   }).join('');
 
-  cartSummaryDiv.innerHTML = itemsHtml + `<strong>Total: $${total.toFixed(2)}</strong>`;
+  cartSummaryDiv.innerHTML = itemsHtml + `<strong>Total: ₱${total.toFixed(2)}</strong>`;
 }
 
 
@@ -222,13 +242,84 @@ form.addEventListener('submit', function (e) {
   }
 
   
-  form.style.display = 'none';
-  document.getElementById('confirmation').style.display = 'block';
+  const isCOD = payment.value === 'Cash on Delivery';
+  const paymentStatus = isCOD ? 'Pending' : 'Paid';
+  
+  
+  const orderStatus = 'Processing';
+  
+  
+  const orderDate = new Date();
+  const estimatedArrival = new Date(orderDate);
+  estimatedArrival.setDate(orderDate.getDate() + Math.floor(Math.random() * 7) + 3);
+  
+  const order = {
+    items: [...cart], 
+    name,
+    email,
+    address,
+    paymentMethod: payment.value,
+    paymentStatus,
+    orderStatus,
+    orderDate: orderDate.toLocaleString(),
+    estimatedArrival: estimatedArrival.toLocaleDateString()
+  };
+
+  
+  const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+  orderHistory.unshift(order); 
+  localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
   
   localStorage.removeItem('cart');
+  form.style.display = 'none';
+  document.getElementById('confirmation').style.display = 'block';
 });
 
-renderCartSummary();
-const confirmationMessage = document.getElementById('confirmation-message');
-const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+function loadOrderHistory() {
+  const container = document.querySelector('.cart-container1');
+  const history = JSON.parse(localStorage.getItem('orderHistory')) || [];
+
+  
+  container.innerHTML = `
+    <h2>Order History</h2>
+    <div id="order-history">
+      <h3>Previous Orders</h3>
+      <div class="orders-list"></div>
+    </div>
+  `;
+
+  const ordersList = container.querySelector('.orders-list');
+
+  if (history.length === 0) {
+    ordersList.innerHTML = `<p>No past orders found.</p>`;
+    return;
+  }
+
+  
+  history.forEach((order, index) => {
+    const itemsHtml = order.items.map(item => 
+      `<li>${item.name} - ${item.quantity} x ₱${item.price.toFixed(2)}</li>`
+    ).join('');
+
+    const totalAmount = order.items.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2);
+    
+    const orderEntry = document.createElement('div');
+    orderEntry.className = 'order-entry';
+    orderEntry.innerHTML = `
+      <div class="order-title">Order #${history.length - index} - ${order.orderDate}</div>
+      <div class="order-details">
+        <p><strong>Status:</strong> <span class="status-${order.orderStatus.toLowerCase().replace(/\s+/g, '-')}">${order.orderStatus}</span></p>
+        <p><strong>Estimated Arrival:</strong> ${order.estimatedArrival}</p>
+        <p><strong>Payment Status:</strong> <span class="payment-${order.paymentStatus.toLowerCase()}">${order.paymentStatus}</span></p>
+        <p><strong>Payment Method:</strong> ${order.paymentMethod}</p>
+        <p><strong>Name:</strong> ${order.name}</p>
+        <p><strong>Email:</strong> ${order.email}</p>
+        <p><strong>Address:</strong> ${order.address}</p>
+        <ul class="order-items">${itemsHtml}</ul>
+        <p class="order-total"><strong>Total: ₱${totalAmount}</strong></p>
+      </div>
+    `;
+    ordersList.appendChild(orderEntry);
+  });
+}
