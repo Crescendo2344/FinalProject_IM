@@ -375,4 +375,35 @@
     opacity: 1;
     transition-delay: 0s;
 }
+
+  #link-A-line{
+    justify-content: center;
+    margin-left: -55px;
+  }
+
+  #link-Ballgown{
+    justify-content: center;
+    margin-left: -70px;
+  }
+
+  #link-Mermaid{
+    justify-content: center;
+    margin-left: -65px;
+  }
+
+  #link-Sheath{
+    justify-content: center;
+    margin-left: -15px;
+  }
+
+  #link-Faf{
+    justify-content: center;
+    margin-left: -35px;
+  }
+
+  #link-Fwo{
+    justify-content: center;
+    margin-left: -70px;
+  }
+
   
