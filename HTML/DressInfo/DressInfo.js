@@ -45,40 +45,46 @@
   if (!addToCartButton) return;
 
   addToCartButton.addEventListener('click', () => {
-    // Get product details
-    const name = document.querySelector('.title')?.textContent.trim();
-    const image = document.getElementById('main-image')?.getAttribute('src');
-    
-    // Extract price - works with multiple formats
-    const priceText = document.querySelector('.subtitle')?.textContent.trim();
-    const price = extractPrice(priceText) || 50000.00; // Default fallback
-    
-    const size = 'M'; // Default size or get from details
-    const color = getDetailValue('Available Color(s)') || 'Ivory';
-    const quantity = 1;
+  // Check if product is available
+  const availability = getDetailValue('Availability');
+if (!availability || availability.toLowerCase().includes('out of stock')) {
+  showToast('❌ This item is out of stock!');
+  return;
+}
 
-    const newItem = { name, image, price, size, color, quantity };
 
-    // Update cart logic
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  // Get product details
+  const name = document.querySelector('.title')?.textContent.trim();
+  const image = document.getElementById('main-image')?.getAttribute('src');
+  
+  // Extract price
+  const priceText = document.querySelector('.subtitle')?.textContent.trim();
+  const price = extractPrice(priceText) || 50000.00;
 
-    const existingIndex = cart.findIndex(item =>
-      item.name === newItem.name &&
-      item.size === newItem.size &&
-      item.color === newItem.color
-    );
+  const size = 'M'; // default value
+  const color = getDetailValue('Available Color(s)') || 'Ivory';
+  const quantity = 1;
 
-    if (existingIndex > -1) {
-      cart[existingIndex].quantity += 1;
-    } else {
-      cart.push(newItem);
-    }
+  const newItem = { name, image, price, size, color, quantity };
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+  // Update cart logic
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Show toast notification
-    showToast(`🔔 ${newItem.name} added to cart!`);
-  });
+  const existingIndex = cart.findIndex(item =>
+    item.name === newItem.name &&
+    item.size === newItem.size &&
+    item.color === newItem.color
+  );
+
+  if (existingIndex > -1) {
+    cart[existingIndex].quantity += 1;
+  } else {
+    cart.push(newItem);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showToast(`🔔 ${newItem.name} added to cart!`);
+});
 
   // Helper function to extract price from various formats
   function extractPrice(priceText) {

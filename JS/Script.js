@@ -323,3 +323,4 @@ function loadOrderHistory() {
     ordersList.appendChild(orderEntry);
   });
 }
+
