@@ -281,6 +281,9 @@
   color: green;
 }
 
+.available1 {
+  color: red;}
+
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
