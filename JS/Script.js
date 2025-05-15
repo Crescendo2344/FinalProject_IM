@@ -106,6 +106,9 @@ function loadCart() {
   });
 }
 
+function formatPHPrice(price) {
+  return '₱' + parseFloat(price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
 
 function setupAddToCartButtons() {
   const buttons = document.querySelectorAll('.Cartbutton');
@@ -113,9 +116,10 @@ function setupAddToCartButtons() {
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const container = button.closest('.ImageContainer');
-      const name = container.querySelector('.Dressname').textContent;
+      const nameElement = container.querySelector('.Dressname');
+      const name = nameElement.textContent;
+      const price = parseFloat(nameElement.getAttribute('data-price')) || 299.00;
       const image = container.querySelector('.img1').src;
-      const price = 299.00;
       const size = 'M'; 
       const color = 'White'; 
       const quantity = 1;
