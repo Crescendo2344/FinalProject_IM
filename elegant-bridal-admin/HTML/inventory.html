@@ -18,9 +18,9 @@
       
       <nav class="sidebar-menu">
         <ul>
-          <li><a href="admin1.html" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+          <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
           <li class="menu-dropdown">
-            <a href="gowns.html"><i class="fas fa-tshirt"></i> <span>Gown Management</span></a>
+            <a href="#"><i class="fas fa-tshirt"></i> <span>Gown Management</span></a>
             <ul class="dropdown-content">
               <li><a href="#all-gowns"><i class="fas fa-list"></i> <span>All Gowns</span></a></li>
               <li><a href="#add-gown"><i class="fas fa-plus-circle"></i> <span>Add New Gown</span></a></li>
@@ -28,11 +28,11 @@
               <li><a href="#inventory"><i class="fas fa-boxes"></i> <span>Inventory</span></a></li>
             </ul>
           </li>
-          <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> <span>Orders</span></a></li>
-          <li><a href="customers.html"><i class="fas fa-users"></i> <span>Customers</span></a></li>
-          <li><a href="suppliers.html"><i class="fas fa-truck"></i> <span>Suppliers</span></a></li>
-          <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>Reports</span></a></li>
-          <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+          <li><a href="#orders"><i class="fas fa-shopping-cart"></i> <span>Orders</span></a></li>
+          <li><a href="#customers"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+          <li><a href="#suppliers"><i class="fas fa-truck"></i> <span>Suppliers</span></a></li>
+          <li><a href="#reports"><i class="fas fa-chart-bar"></i> <span>Reports</span></a></li>
+          <li><a href="#settings"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
         </ul>
       </nav>
     </aside>
@@ -60,58 +60,59 @@
           </div>
         </div>
       </header>
-
-        <div id="suppliers" class="tab-content">
+<!-- Inventory Content -->
+        <div id="inventory" class="tab-content">
           <div class="content-card">
             <div class="card-header">
-              <h3>All Suppliers</h3>
-              <button class="btn btn-primary" id="add-supplier">Add Supplier</button>
+              <h3>Inventory Management</h3>
+              <button class="btn btn-primary" id="export-inventory">Export Inventory</button>
             </div>
             <div class="table-responsive">
               <table>
                 <thead>
                   <tr>
-                    <th>Supplier</th>
-                    <th>Contact</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Gowns</th>
+                    <th>Gown</th>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Stock</th>
                     <th>Status</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Bridal Fabrics Inc.</td>
-                    <td>John Smith</td>
-                    <td>john@bridalfabrics.com</td>
-                    <td>+1 800 123 4567</td>
-                    <td>A-line, Ballgown, Sheath</td>
-                    <td><span class="status completed">Active</span></td>
-                    <td>
-                      <button class="btn btn-outline btn-sm">View</button>
-                      <button class="btn btn-primary btn-sm">Edit</button>
-                    </td>
+                    <td>Amaya</td>
+                    <td>A-line</td>
+                    <td>S</td>
+                    <td>White</td>
+                    <td>3</td>
+                    <td><span class="status in-stock">In Stock</span></td>
+                    <td><button class="btn btn-outline btn-sm">Update</button></td>
                   </tr>
                   <tr>
-                    <td>Pearl Beads Co.</td>
-                    <td>Mary Johnson</td>
-                    <td>mary@pearlbeads.com</td>
-                    <td>+1 800 765 4321</td>
-                    <td>Fit and Flare, Mermaid
-                    </td>
-                    <td><span class="status completed">Active</span></td>
-                    <td>
-                      <button class="btn btn-outline btn-sm">View</button>
-                      <button class="btn btn-primary btn-sm">Edit</button>
-                    </td>
+                    <td>Amaya</td>
+                    <td>A-line</td>
+                    <td>M</td>
+                    <td>White</td>
+                    <td>2</td>
+                    <td><span class="status low-stock">Low Stock</span></td>
+                    <td><button class="btn btn-outline btn-sm">Update</button></td>
+                  </tr>
+                  <tr>
+                    <td>Bella</td>
+                    <td>Mermaid</td>
+                    <td>L</td>
+                    <td>Ivory</td>
+                    <td>0</td>
+                    <td><span class="status out-of-stock">Out of Stock</span></td>
+                    <td><button class="btn btn-outline btn-sm">Update</button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-
       </body>
 
 </html>

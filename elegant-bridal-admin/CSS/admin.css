@@ -542,3 +542,11 @@ textarea.form-control {
     gap: 0;
   }
 }
+
+.chart-box {
+  margin: 20px 0;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}

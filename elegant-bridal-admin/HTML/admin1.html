@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Bridal - Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/admin1.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-rings-wedding"></i>
+        <h1>ELEGANT BRIDAL</h1>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="/elegant-bridal-admin/HTML/admin1.html" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+          <li class="menu-dropdown">
+            <a href="gowns.html"><i class="fas fa-tshirt"></i> <span>Gown Management</span></a>
+            <ul class="dropdown-content">
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html"><i class="fas fa-list"></i> <span>All Gowns</span></a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=add"><i class="fas fa-plus-circle"></i> <span>Add New Gown</span></a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=categories"><i class="fas fa-tags"></i> <span>Categories</span></a></li>
+              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=inventory"><i class="fas fa-boxes"></i> <span>Inventory</span></a></li>
+            </ul>
+          </li>
+          <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> <span>Orders</span></a></li>
+          <li><a href="customers.html"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+          <li><a href="suppliers.html"><i class="fas fa-truck"></i> <span>Suppliers</span></a></li>
+          <li><a href="reports.html"><i class="fas fa-chart-bar"></i> <span>Reports</span></a></li>
+          <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="header-left">
+          <h2 id="page-title">Dashboard Overview</h2>
+          <div class="breadcrumb">
+            <a href="#">Home</a> / <span id="breadcrumb-current">Dashboard</span>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Search..." id="global-search">
+            <i class="fas fa-search"></i>
+          </div>
+          
+          <div class="admin-profile">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin">
+            <span>Admin User</span>
+            <i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Admin Content - Dynamically loaded based on navigation -->
+      <div class="admin-content" id="admin-content">
+        <!-- Dashboard Content -->
+        <div id="dashboard-content" class="tab-content active">
+          <!-- Stats Cards -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="stat-info">
+                <h3>1,248</h3>
+                <p>Total Orders</p>
+                <span class="stat-trendup"><i class="fas fa-arrow-up"></i> 12% from last month</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-peso-sign"></i>
+              </div>
+              <div class="stat-info">
+                <h3>₱34,567</h3>
+                <p>Total Revenue</p>
+                <span class="stat-trendup"><i class="fas fa-arrow-up"></i> 8% from last month</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <div class="stat-info">
+                <h3>287</h3>
+                <p>Gowns in Stock</p>
+                <span class="stat-trenddown"><i class="fas fa-arrow-down"></i> 5% from last month</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-info">
+                <h3>542</h3>
+                <p>Total Customers</p>
+                <span class="stat-trendup"><i class="fas fa-arrow-up"></i> 15% from last month</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Orders and Low Stock -->
+          <div class="content-grid">
+            <div class="content-card">
+              <div class="card-header">
+                <h3>Recent Orders</h3>
+                <a href="#orders" class="view-all">View All</a>
+              </div>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Customer</th>                                   
+                      <th>Date</th>
+                      <th>Ordered Item</th>
+                      <th>Estimated Arrival</th>
+                      <th>Payment Status</th>
+                      <th>Payment Method</th>
+                      
+                      <th>Status</th>
+                      <th>Qty</th>
+                      <th>Total</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2025005EBD5</td>
+                      <td>Nica Angela Samsom</td>                                
+                      <td>May 15, 2025</td>
+                      <td>Merida, Bosphor</td>  
+                      <td>May 19, 2025</td>
+                      <td>Paid</td>
+                      <td>Gcash</td>
+                      
+                      <td><span class="status completed">Completed</span></td>
+                      <td>2, 1</td>
+                      <td>₱157000.00</td>
+                      <td><button class="btn btn-outline btn-sm">View</button></td>
+                    </tr>
+                    <tr>
+                      <td>2025005EBD4</td>
+                      <td>Jophet V. Sanchez</td>                                        
+                      <td>May 15, 2025</td>
+                      <td>Adi</td>
+                      <td>May 20, 2025</td>                    
+                      <td>Pending</td>
+                      <td>Cash on Delivery</td>               
+                      <td><span class="status completed">Completed</span></td>
+                      <td>2</td>
+                      <td>₱100000.00</td>
+                      <td><button class="btn btn-outline btn-sm">View</button></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="content-card">
+              <div class="card-header">
+                <h3>Low Stock Items</h3>
+                <a href="#inventory" class="view-all">View All</a>
+              </div>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Gown</th>
+                      <th>Category</th>
+                      <th>Stock</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cascade</td>
+                      <td>Fit and Flare</td>
+                      <td><span class="status low-stock">3 left</span></td>
+                      <td><button class="btn btn-outline btn-sm">Reorder</button></td>
+                    </tr>
+                    <tr>
+                      <td>Dion</td>
+                      <td>Sheath</td>
+                      <td><span class="status low-stock">2 left</span></td>
+                      <td><button class="btn btn-outline btn-sm">Reorder</button></td>
+                    </tr>
+                    <tr>
+                      <td>Tabitha</td>
+                      <td>A-line</td>
+                      <td><span class="status out-of-stock">Out of stock</span></td>
+                      <td><button class="btn btn-outline btn-sm">Reorder</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activities -->
+          <div class="content-card">
+            <div class="card-header">
+              <h3>Recent Activities</h3>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="activity-content">
+                  <p><strong>New order</strong> #EB-1001 placed by Jophet V. Sanchez</p>
+                  <p class="activity-time">37 minutes ago</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="activity-content">
+                  <p><strong>New gown added:</strong> Fit and Flare Cascade</p>
+                  <p class="activity-time">2 days ago</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-truck"></i>
+                </div>
+                <div class="activity-content">
+                  <p><strong>Shipment received</strong> from Bridal Fabrics Inc.</p>
+                  <p class="activity-time">5 hours ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  <script href="../JS/admin.js"></script>
+</body>
+</html>

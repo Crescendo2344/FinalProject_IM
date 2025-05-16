@@ -18,9 +18,9 @@
       
       <nav class="sidebar-menu">
         <ul>
-          <li><a href="admin1.html" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+          <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
           <li class="menu-dropdown">
-            <a href="gowns.html"><i class="fas fa-tshirt"></i> <span>Gown Management</span></a>
+            <a href="#"><i class="fas fa-tshirt"></i> <span>Gown Management</span></a>
             <ul class="dropdown-content">
               <li><a href="#all-gowns"><i class="fas fa-list"></i> <span>All Gowns</span></a></li>
               <li><a href="#add-gown"><i class="fas fa-plus-circle"></i> <span>Add New Gown</span></a></li>
@@ -60,50 +60,45 @@
           </div>
         </div>
       </header>
-
-        <div id="suppliers" class="tab-content">
+<!-- Categories Content -->
+        <div id="categories" class="tab-content">
           <div class="content-card">
             <div class="card-header">
-              <h3>All Suppliers</h3>
-              <button class="btn btn-primary" id="add-supplier">Add Supplier</button>
+              <h3>Gown Categories</h3>
+              <button class="btn btn-primary" id="add-category">Add Category</button>
             </div>
             <div class="table-responsive">
               <table>
                 <thead>
                   <tr>
-                    <th>Supplier</th>
-                    <th>Contact</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Gowns</th>
-                    <th>Status</th>
+                    <th>Category</th>
+                    <th>Number of Gowns</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Bridal Fabrics Inc.</td>
-                    <td>John Smith</td>
-                    <td>john@bridalfabrics.com</td>
-                    <td>+1 800 123 4567</td>
-                    <td>A-line, Ballgown, Sheath</td>
-                    <td><span class="status completed">Active</span></td>
+                    <td>A-line</td>
+                    <td>24</td>
                     <td>
-                      <button class="btn btn-outline btn-sm">View</button>
-                      <button class="btn btn-primary btn-sm">Edit</button>
+                      <button class="btn btn-outline btn-sm">Edit</button>
+                      <button class="btn btn-danger btn-sm">Delete</button>
                     </td>
                   </tr>
                   <tr>
-                    <td>Pearl Beads Co.</td>
-                    <td>Mary Johnson</td>
-                    <td>mary@pearlbeads.com</td>
-                    <td>+1 800 765 4321</td>
-                    <td>Fit and Flare, Mermaid
-                    </td>
-                    <td><span class="status completed">Active</span></td>
+                    <td>Ball Gown</td>
+                    <td>18</td>
                     <td>
-                      <button class="btn btn-outline btn-sm">View</button>
-                      <button class="btn btn-primary btn-sm">Edit</button>
+                      <button class="btn btn-outline btn-sm">Edit</button>
+                      <button class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mermaid</td>
+                    <td>15</td>
+                    <td>
+                      <button class="btn btn-outline btn-sm">Edit</button>
+                      <button class="btn btn-danger btn-sm">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -111,7 +106,7 @@
             </div>
           </div>
         </div>
-
-      </body>
+ </body>
 
 </html>
+
