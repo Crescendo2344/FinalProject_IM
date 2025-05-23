@@ -3,35 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Bridal - Admin Dashboard</title>
-  <link rel="icon" type="image/icon" href="images/favicon.png">
+  <title>Admin Dashboard | Elegant Bridal</title>
+  <link rel="icon" type="image/icon" href="../../Images/favicon.png">
   <link rel="stylesheet" href="/elegant-bridal-admin/CSS/admin.css">
   <link rel="stylesheet" href="/elegant-bridal-admin/CSS/dashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
   <div class="admin-container">
-    <!-- Sidebar Navigation -->
+    
     <aside class="admin-sidebar">
       <div class="sidebar-header">
-        <h1><i class="fas fa-rings-wedding"></i> ELEGANT BRIDAL</h1>
-        <p>Admin Dashboard</p>
+        <i class="fas fa-rings-wedding"></i>
+        <h1>ELEGANT BRIDAL</h1>
       </div>
       
       <nav class="sidebar-menu">
         <ul>
-          <li><a href="/elegant-bridal-admin/HTML/index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-          <li class="menu-dropdown">
-            <a href="gowns.html"><i class="fas fa-tshirt"></i> Gown Management </i></a>
-            <ul class="dropdown-content">
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html"><i class="fas fa-list"></i> All Gowns</a></li>
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=add"><i class="fas fa-plus-circle"></i> Add New Gown</a></li>
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=categories"><i class="fas fa-tags"></i> Categories</a></li>
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=inventory"><i class="fas fa-boxes"></i> Inventory</a></li>
-            </ul>
-          </li>
+          <li><a href="index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="gowns.html"><i class="fas fa-tshirt"></i> Gown Management</a></li>
           <li><a href="/elegant-bridal-admin/HTML/orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
           <li><a href="/elegant-bridal-admin/HTML/customers.html"><i class="fas fa-users"></i> Customers</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/employees.html"><i class="fas fa-user-tie"></i> Employees</a></li>
           <li><a href="/elegant-bridal-admin/HTML/suppliers.html"><i class="fas fa-truck"></i> Suppliers</a></li>
           <li><a href="/elegant-bridal-admin/HTML/reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
           <li><a href="/elegant-bridal-admin/HTML/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
@@ -39,7 +32,7 @@
       </nav>
     </aside>
 
-    <!-- Main Content Area -->
+    
     <main class="admin-main">
       <header class="admin-header">
         <div class="header-left">
@@ -59,83 +52,247 @@
             <i class="fa-solid fa-user-shield"></i>
             <span>Admin User</span>
             <i class="fas fa-caret-down"></i>
+             <button id="logout-btn" class="btn btn-logout" title="Log out">
+             <i class="fas fa-sign-out-alt"></i>
           </div>
         </div>
       </header>
 
-      <!-- Dashboard Content -->
-      <div class="dashboard-content">
-        <!-- Stats Cards -->
-        <div class="stats-grid" id="statsCards">
-          <!-- Filled by JavaScript -->
-        </div>
-
-        <!-- Recent Orders and Low Stock -->
-        <div class="content-grid">
-          <div class="content-card">
-            <div class="card-header">
-              <h3>Recent Orders</h3>
-              <a href="/elegant-bridal-admin/HTML/orders.html" class="view-all">View All</a>
+      
+      <div class="admin-content" id="admin-content">
+        
+        <div id="dashboard-content" class="tab-content active">
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="stat-info">
+                <h3>1,248</h3>
+                <p>Total Orders</p>
+                <span class="stat-trendup"><i class="fas fa-arrow-up"></i> 12% from last month</span>
+              </div>
             </div>
-            <div class="table-responsive">
-              <table id="recentOrders">
-                <thead>
-                  <tr>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Filled by JavaScript -->
-                </tbody>
-              </table>
+            
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-peso-sign"></i>
+              </div>
+              <div class="stat-info">
+                <h3>₱34,567</h3>
+                <p>Total Revenue</p>
+                <span class="stat-trendup"><i class="fas fa-arrow-up"></i> 8% from last month</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <div class="stat-info">
+                <h3>287</h3>
+                <p>Gowns in Stock</p>
+                <span class="stat-trenddown"><i class="fas fa-arrow-down"></i> 5% from last month</span>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-info">
+                <h3>542</h3>
+                <p>Total Customers</p>
+                <span class="stat-trendup"><i class="fas fa-arrow-up"></i> 15% from last month</span>
+              </div>
             </div>
           </div>
           
-          <div class="content-card">
-            <div class="card-header">
-              <h3>Low Stock Items</h3>
-              <a href="/elegant-bridal-admin/HTML/gowns.html?action=inventory" class="view-all">View All</a>
-            </div>
-            <div class="table-responsive">
-              <table id="lowStockItems">
-                <thead>
-                  <tr>
-                    <th>Gown</th>
-                    <th>Category</th>
-                    <th>Stock</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Filled by JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
-        <!-- Recent Activities -->
-        <div class="content-card full-width">
-          <div class="card-header">
-            <h3>Recent Activities</h3>
-            <a href="#" class="view-all">View All</a>
-          </div>
-          <div class="activity-list" id="recentActivities">
-            <!-- Filled by JavaScript -->
-          </div>
-        </div>
-      </div>
-    </main>
+        <div class="content-grid">
+  <div class="content-card">
+    <div class="card-header">
+      <h3>Recent Orders</h3>
+      <a href="#orders" class="view-all">View All</a>
+    </div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Ordered Item(s)</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Payment Method</th>
+            <th>Payment Status</th>
+            <th>Transaction ID</th>
+            <th>Shipping Method</th>
+            <th>Estimated Arrival</th>
+            <th>Tracking No.</th>
+            <th>Order Status</th>
+            <th>Order Notes</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025005EBD5</td>
+            <td>Nica Angela Samsom</td>
+            <td>May 15, 2025</td>
+            <td>10:42 AM</td>
+            <td>Merida, Bosphor</td>
+            <td>2, 1</td>
+            <td>₱157000.00</td>
+            <td>Gcash</td>
+            <td><span class="status completed">Paid</span></td>
+            <td>TXN-8845223</td>
+            <td>Express</td>
+            <td>May 19, 2025</td>
+            <td>TRK-EBD12345</td>
+            <td><span class="status completed">Shipped</span></td>
+            <td>Gift-wrapped, deliver before 5 PM</td>
+            <td><button class="btn btn-outline btn-sm">View</button></td>
+          </tr>
+          <tr>
+            <td>2025005EBD4</td>
+            <td>Jophet V. Sanchez</td>
+            <td>May 15, 2025</td>
+            <td>11:30 AM</td>
+            <td>Adi</td>
+            <td>2</td>
+            <td>₱100000.00</td>
+            <td>Cash on Delivery</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>—</td>
+            <td>Standard</td>
+            <td>May 20, 2025</td>
+            <td>TRK-EBD12346</td>
+            <td><span class="status processing">Processing</span></td>
+            <td>Customer will pick up if delayed</td>
+            <td><button class="btn btn-outline btn-sm">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
 
-  <!-- Toast Notifications -->
+            
+<div class="content-card">
+  <div class="card-header">
+    <h3>Low Stock Items</h3>
+    <a href="#inventory" class="view-all">View All</a>
+  </div>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Gown</th>
+          <th>Category</th>
+          <th>SKU</th>
+          <th>Size(s)</th>
+          <th>Stock</th>
+          <th>Supplier</th>
+          <th>Last Restocked</th>
+          <th>Reorder Threshold</th>
+          <th>Reorder Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cascade</td>
+          <td>Fit and Flare</td>
+          <td>GWN00123</td>
+          <td>S, M</td>
+          <td><span class="status low-stock">3 left</span></td>
+          <td>Elegant Supplies Inc.</td>
+          <td>Apr 28, 2025</td>
+          <td>5</td>
+          <td><span class="status cancelled">Not Ordered</span></td>
+          <td><button class="btn btn-outline btn-sm">Reorder</button></td>
+        </tr>
+        <tr>
+          <td>Dion</td>
+          <td>Sheath</td>
+          <td>GWN00145</td>
+          <td>M</td>
+          <td><span class="status low-stock">2 left</span></td>
+          <td>Royal Gown Co.</td>
+          <td>Apr 22, 2025</td>
+          <td>4</td>
+          <td><span class="status completed">Ordered</span></td>
+          <td><button class="btn btn-outline btn-sm">Reorder</button></td>
+        </tr>
+        <tr>
+          <td>Tabitha</td>
+          <td>A-line</td>
+          <td>GWN00167</td>
+          <td>L</td>
+          <td><span class="status out-of-stock">Out of stock</span></td>
+          <td>Bridal Elegance</td>
+          <td>Apr 10, 2025</td>
+          <td>3</td>
+          <td><span class="status pending">Pending</span></td>
+          <td><button class="btn btn-outline btn-sm">Reorder</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+       <div class="content-card">
+  <div class="card-header">
+    <h3>Recent Activities</h3>
+    <a href="#" class="view-all">View All</a>
+  </div>
+  <div class="activity-list">
+
+  
+    <div class="activity-item" data-activity-id="ACT-001" data-type="order" data-related-id="EB-1001" data-performed-by="System" data-timestamp="2025-05-18 13:45:00">
+      <div class="activity-icon">
+        <i class="fas fa-shopping-cart text-green-600"></i>
+      </div>
+      <div class="activity-content">
+        <p><strong>New order</strong> #EB-1001 placed by Jophet V. Sanchez</p>
+        <p class="activity-time">37 minutes ago <span class="exact-time">(2025-05-18 13:45)</span></p>
+        <p class="activity-by">Performed by: System</p>
+      </div>
+    </div>
+
+    
+    <div class="activity-item" data-activity-id="ACT-002" data-type="inventory" data-related-id="GOWN-023" data-performed-by="Admin Maria Lopez" data-timestamp="2025-05-16 09:15:00">
+      <div class="activity-icon">
+        <i class="fas fa-tshirt text-blue-600"></i>
+      </div>
+      <div class="activity-content">
+        <p><strong>New gown added:</strong> Fit and Flare Cascade</p>
+        <p class="activity-time">2 days ago <span class="exact-time">(2025-05-16 09:15)</span></p>
+        <p class="activity-by">Performed by: Admin Josh Kent Ybanez</p>
+      </div>
+    </div>
+
+    <div class="activity-item" data-activity-id="ACT-003" data-type="shipment" data-related-id="SHIP-4567" data-performed-by="Admin John Cruz" data-timestamp="2025-05-18 09:00:00">
+      <div class="activity-icon">
+        <i class="fas fa-truck text-yellow-600"></i>
+      </div>
+      <div class="activity-content">
+        <p><strong>Shipment received</strong> from Bridal Fabrics Inc.</p>
+        <p class="activity-time">5 hours ago <span class="exact-time">(2025-05-18 09:00)</span></p>
+        <p class="activity-by">Performed by: Admin Rio Jen Sagaad</p>
+      </div>
+    </div>
+
+  </div>
+</div>
   <div id="toast-container"></div>
 
- 
+ <script src="../JS/Admin.js"></script>
 </body>
+
+
 </html>

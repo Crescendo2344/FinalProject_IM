@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employees | Elegant Bridal</title>
+  <link rel="icon" type="image/icon" href="../../Images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../CSS/admin.css"/>
+  <link rel="stylesheet" href="../CSS/dashboard.css"/>
+</head>
+<body>
+  <div class="admin-container">
+
+
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-rings-wedding"></i>
+        <h1>ELEGANT BRIDAL</h1>
+      </div>
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="gowns.html"><i class="fas fa-tshirt"></i> Gown Management</a></li>
+          <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+          <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+          <li><a href="employees.html" class="active"><i class="fas fa-user-tie"></i> Employees</a></li>
+          <li><a href="suppliers.html"><i class="fas fa-truck"></i> Suppliers</a></li>
+          <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+          <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="header-left">
+          <h2>Employees</h2>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Employees</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" placeholder="Search employees..." />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="admin-profile">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>Admin User</span>
+            <i class="fas fa-caret-down"></i>
+            <button id="logout-btn" class="btn btn-logout" title="Log out">
+             <i class="fas fa-sign-out-alt"></i>
+          </div>
+        </div>
+      </header>
+
+      
+      <div class="content-card">
+        <div class="card-header">
+          <h3>All Employees</h3>
+          <button class="btn btn-primary">Add Employee</button>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee ID</th>
+                <th>Photo</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Employment Type</th>
+                <th>Date Hired</th>
+                <th>Status</th>
+                <th>Salary</th>
+                <th>Last Login</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EMP-001</td>
+                <td><img src="../../Images/alden.jpg" alt="Employee" class="user-photo" /></td>
+                <td>Alden Richards</td>
+                <td>Aldenrichards@gmail.com</td>
+                <td>+63 917 555 1234</td>
+                <td>Inventory Manager</td>
+                <td>Warehouse</td>
+                <td>Full-Time</td>
+                <td>Jan 12, 2022</td>
+                <td><span class="status completed">Active</span></td>
+                <td>₱35,000.00</td>
+                <td>May 18, 2025</td>
+                <td>
+                  <button class="btn btn-outline btn-sm">View</button>
+                  <button class="btn btn-primary btn-sm">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>EMP-002</td>
+                <td><img src="../../Images/brody.jpg" alt="Employee" class="user-photo" /></td>
+                <td>Brody Brown</td>
+                <td>BrodyBrown@gmail.com</td>
+                <td>+63 927 123 4567</td>
+                <td>Customer Support</td>
+                <td>Sales</td>
+                <td>Part-Time</td>
+                <td>Aug 5, 2023</td>
+                <td><span class="status completed">Active</span></td>
+                <td>₱18,500.00</td>
+                <td>May 17, 2025</td>
+                <td>
+                  <button class="btn btn-outline btn-sm">View</button>
+                  <button class="btn btn-primary btn-sm">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="../JS/Admin.js"></script>
+</body>
+</html>

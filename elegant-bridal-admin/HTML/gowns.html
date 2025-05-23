@@ -3,124 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Bridal - Gown Management</title>
-  <link rel="icon" type="image/icon" href="images/favicon.png">
-  <link rel="stylesheet" href="/elegant-bridal-admin/CSS/admin.css">
-  <link rel="stylesheet" href="/elegant-bridal-admin/CSS/gowns.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>Gowns | Elegant Bridal</title>
+  <link rel="icon" type="image/icon" href="../../Images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/admin.css">
+  <link rel="stylesheet" href="../CSS/dashboard.css">
 </head>
 <body>
   <div class="admin-container">
-    <!-- Sidebar Navigation -->
+
     <aside class="admin-sidebar">
       <div class="sidebar-header">
-        <h1><i class="fas fa-rings-wedding"></i> ELEGANT BRIDAL</h1>
-        <p>Admin Dashboard</p>
+        <i class="fas fa-rings-wedding"></i>
+        <h1>ELEGANT BRIDAL</h1>
       </div>
       
       <nav class="sidebar-menu">
         <ul>
-          <li><a href="/elegant-bridal-admin/HTML/index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-          <li class="menu-dropdown active">
-            <a href="gowns.html"><i class="fas fa-tshirt"></i> Gown Management</i></a>
-            <ul class="dropdown-content">
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html" class="active"><i class="fas fa-list"></i> All Gowns</a></li>
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=add"><i class="fas fa-plus-circle"></i> Add New Gown</a></li>
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=categories"><i class="fas fa-tags"></i> Categories</a></li>
-              <li><a href="/elegant-bridal-admin/HTML/gowns.html?action=inventory"><i class="fas fa-boxes"></i> Inventory</a></li>
-            </ul>
-          </li>
+          <li><a href="/elegant-bridal-admin/HTML/index.html" class="Active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+          <li class="menu-dropdown">
+           <a href="#add-gown" class="has-dropdown" ><i class="fas fa-tshirt"></i> <span>Gown Management</span></a>
+                 <ul class="dropdown-content">
+              <li><a href="#add-gown" class="tab-link" data-target="all-gowns"><i class="fas fa-list"></i> All Gowns</a></li>
+              <li><a href="#all-gowns" class="tab-link" data-target="add-gown"><i class="fas fa-plus-circle"></i> Add New Gown</a></li>
+              <li><a href="#categories" class="tab-link" data-target="categories"><i class="fas fa-tags"></i> Categories</a></li>
+              <li><a href="#inventory" class="tab-link" data-target="inventory"><i class="fas fa-boxes"></i> Inventory</a></li>
+         </ul>
+       </li>
           <li><a href="/elegant-bridal-admin/HTML/orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
           <li><a href="/elegant-bridal-admin/HTML/customers.html"><i class="fas fa-users"></i> Customers</a></li>
+          <li><a href="/elegant-bridal-admin/HTML/employees.html"><i class="fas fa-user-tie"></i> Employees</a></li>
           <li><a href="/elegant-bridal-admin/HTML/suppliers.html"><i class="fas fa-truck"></i> Suppliers</a></li>
           <li><a href="/elegant-bridal-admin/HTML/reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
           <li><a href="/elegant-bridal-admin/HTML/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
-        </ul>
+          </ul>
       </nav>
     </aside>
 
-    <!-- Main Content Area -->
+    
     <main class="admin-main">
       <header class="admin-header">
         <div class="header-left">
-          <h2>Gown Management</h2>
+          <h2 id="page-title">Dashboard Overview</h2>
           <div class="breadcrumb">
-            <a href="/elegant-bridal-admin/HTML/index.html">Home</a> / <span>Gowns</span>
+            <a href="index.html">Home</a> / <span id="breadcrumb-current">Gown Management</span>
           </div>
         </div>
         
         <div class="header-right">
           <div class="search-box">
-            <input type="text" placeholder="Search gowns..." id="gownSearch">
+            <input type="text" placeholder="Search..." id="global-search">
             <i class="fas fa-search"></i>
           </div>
           
           <div class="admin-profile">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin">
-            <span>Admin User</span>
+           <i class="fa-solid fa-user-shield"></i>
+              <span>Admin User</span>
             <i class="fas fa-caret-down"></i>
+            <button id="logout-btn" class="btn btn-logout" title="Log out">
+             <i class="fas fa-sign-out-alt"></i>
           </div>
         </div>
       </header>
 
-      <!-- Gown Content -->
-      <div class="gown-content">
-        <!-- Check URL for action parameter -->
-        <div id="gownListContent">
-          <!-- Gown List View -->
+        <div id="all-gowns" class="tab-content">
           <div class="content-card">
             <div class="card-header">
               <h3>All Gowns</h3>
-              <a href="/elegant-bridal-admin/HTML/gowns.html?action=add" class="btn">Add New Gown</a>
+              <a href="#add-gown" class="btn btn-primary">Add New Gown</a>
             </div>
             <div class="table-responsive">
-              <table id="gownsTable">
+              <table id="gowns-table">
                 <thead>
-                  <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
+                <tr>
+                 <th>Image</th>
+               <th>Name</th>
+                <th>Category</th>
+                 <th>Price</th>
+                <th>Stock</th>
+                <th>Color(s)</th>
+                 <th>Size(s)</th>
+                <th>Style</th>
+                <th>Fabric</th>
+                <th>Neckline</th>
+                 <th>Sleeve</th>
+                  <th>Back Closure</th>
+                  <th>Detailing</th>
+                 <th>Shipping</th>
+                 <th>Return Policy</th>
+                 <th>Care</th>
+                  <th>Designer</th>
+                  <th>Collection</th>
+                  <th>Product Code</th>
+                  <th>Product ID</th>
+                   <th>Dimensions</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                 </tr>
+               </thead>
                 <tbody>
-                  <!-- Filled by JavaScript -->
-                </tbody>
+  <tr>
+    <td><img src="/Images/Adi.jpg" alt="Adi" class="gown-image"></td>
+    <td>Adi</td>
+    <td>Ball Gown</td>
+    <td>₱50,000.00</td>
+    <td>12</td>
+    <td>Ivory / Blush</td>
+    <td>XS, S, M, L, XL, XXL</td>
+    <td>Classy, Modern</td>
+    <td>Lace, Sparkle, Tulle</td>
+    <td>Sweetheart</td>
+    <td>Off-shoulder</td>
+    <td>Lace-up</td>
+    <td>Beading, Appliqué</td>
+    <td>Free Nationwide Shipping</td>
+    <td>7-day return</td>
+    <td>Dry clean only</td>
+    <td>Elena V.</td>
+    <td>Spring 2025</td>
+    <td>EBG-001</td>
+    <td>1001</td>
+    <td>150cm x 40cm x 30cm</td>
+    <td><span class="status in-stock">In Stock</span></td>
+    <td>
+      <button class="btn btn-outline btn-sm">Edit</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="/Images/Amaya.jpg" alt="Amaya" class="gown-image"></td>
+    <td>Amaya</td>
+    <td>A-line</td>
+    <td>₱63,000.00</td>
+    <td>8</td>
+    <td>White / Champagne</td>
+    <td>XS, S, M, L, XL</td>
+    <td>Elegant, Romantic</td>
+    <td>Silk, Tulle</td>
+    <td>V-neck</td>
+    <td>Cap sleeves</td>
+    <td>Buttoned</td>
+    <td>Floral Lace, Beading</td>
+    <td>Standard Shipping</td>
+    <td>14-day return</td>
+    <td>Hand wash recommended</td>
+    <td>Maison Blanche</td>
+    <td>Summer 2025</td>
+    <td>EBG-002</td>
+    <td>1002</td>
+    <td>145cm x 38cm x 30cm</td>
+    <td><span class="status in-stock">In Stock</span></td>
+    <td>
+      <button class="btn btn-outline btn-sm">Edit</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="/Images/Miller.jpg" alt="Miller" class="gown-image"></td>
+    <td>Miller</td>
+    <td>Mermaid</td>
+    <td>₱83,000.00</td>
+    <td>7</td>
+    <td>White / Ivory</td>
+    <td>S, M, L</td>
+    <td>Modern, Romantic</td>
+    <td>Fully beaded, Lace, Suit fabric</td>
+    <td>Illusion neckline</td>
+    <td>Long sleeves</td>
+    <td>Hidden zipper</td>
+    <td>Sequins, Crystals</td>
+    <td>Express Shipping</td>
+    <td>No returns</td>
+    <td>Dry clean only</td>
+    <td>Olivia Vance</td>
+    <td>Winter 2024</td>
+    <td>EBG-003</td>
+    <td>1003</td>
+    <td>140cm x 36cm x 28cm</td>
+    <td><span class="status low-stock">Low Stock</span></td>
+    <td>
+      <button class="btn btn-outline btn-sm">Edit</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="/Images/Amphora.jpg" alt="Amphora" class="gown-image"></td>
+    <td>Amphora</td>
+    <td>Sheath</td>
+    <td>₱63,700.00</td>
+    <td>32</td>
+    <td>White / Ivory / Blush</td>
+    <td>XS, S, M, L</td>
+    <td>Classy, Modern</td>
+    <td>Chiffon, Lace, Sparkle, Tulle, Beaded</td>
+    <td>Square</td>
+    <td>Sleeveless</td>
+    <td>Hook and eye</td>
+    <td>Pearl accents, Floral embroidery</td>
+    <td>Free Shipping</td>
+    <td>7-day return</td>
+    <td>Machine washable</td>
+    <td>Sofia Gowns</td>
+    <td>Fall 2025</td>
+    <td>EBG-004</td>
+    <td>1004</td>
+    <td>152cm x 42cm x 30cm</td>
+    <td><span class="status in-stock">In Stock</span></td>
+    <td>
+      <button class="btn btn-outline btn-sm">Edit</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="/Images/North.jpg" alt="North" class="gown-image"></td>
+    <td>North</td>
+    <td>Fit-and-flare</td>
+    <td>₱63,799.00</td>
+    <td>4</td>
+    <td>White / Blush</td>
+    <td>S, M, L</td>
+    <td>Modern, Romantic</td>
+    <td>Fully beaded</td>
+    <td>Halter</td>
+    <td>Strapless</td>
+    <td>Zip with buttons</td>
+    <td>Crystal detailing</td>
+    <td>Priority Shipping</td>
+    <td>No returns</td>
+    <td>Dry clean only</td>
+    <td>Nordelle</td>
+    <td>Luxury Line</td>
+    <td>EBG-005</td>
+    <td>1005</td>
+    <td>155cm x 43cm x 31cm</td>
+    <td><span class="status low-stock">Low Stock</span></td>
+    <td>
+      <button class="btn btn-outline btn-sm">Edit</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="/Images/Chantel.jpg" alt="Chantel" class="gown-image"></td>
+    <td>Chantel</td>
+    <td>Fitted with overskirt</td>
+    <td>₱99,499.00</td>
+    <td>3</td>
+    <td>White / Ivory / Blush</td>
+    <td>XS, S, M, L, XL, XXL</td>
+    <td>Minimalist, Modern</td>
+    <td>Satin, Tulle, Pearls</td>
+    <td>Sweetheart</td>
+    <td>Spaghetti straps</td>
+    <td>Corset back</td>
+    <td>Pearl detailing</td>
+    <td>Free International Shipping</td>
+    <td>Return within 5 days</td>
+    <td>Hand wash only</td>
+    <td>Chanté Bridal</td>
+    <td>Exclusive 2025</td>
+    <td>EBG-006</td>
+    <td>1006</td>
+    <td>158cm x 45cm x 33cm</td>
+    <td><span class="status low-stock">Low Stock</span></td>
+    <td>
+      <button class="btn btn-outline btn-sm">Edit</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </td>
+  </tr>
+</div>
+</tbody>
+
               </table>
             </div>
-            
-            <!-- Pagination -->
             <div class="pagination">
-              <button class="btn btn-outline" id="prevPage">Previous</button>
-              <div class="page-numbers" id="pageNumbers"></div>
-              <button class="btn btn-outline" id="nextPage">Next</button>
+              <button class="btn btn-outline" id="prev-page">Previous</button>
+              <div class="page-numbers">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+              </div>
+              <button class="btn btn-outline" id="next-page">Next</button>
             </div>
           </div>
         </div>
 
-        <!-- Add/Edit Gown Form (hidden by default) -->
-        <div id="gownFormContent" style="display: none;">
+        
+        <div id="add-gown" class="tab-content">
           <div class="content-card">
             <div class="card-header">
-              <h3 id="gownFormTitle">Add New Gown</h3>
-              <button class="btn btn-outline" id="backToList">Back to List</button>
+              <h3>Add New Gown</h3>
+              <a href="#all-gowns" class="btn btn-outline">Back to All Gowns</a>
             </div>
-            
-            <form id="gownForm">
+            <form id="gown-form">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="gownName">Gown Name</label>
-                  <input type="text" id="gownName" class="form-control" required>
+                  <label for="gown-name">Gown Name</label>
+                  <input type="text" id="gown-name" class="form-control" required>
                 </div>
-                
                 <div class="form-group">
-                  <label for="gownCategory">Category</label>
-                  <select id="gownCategory" class="form-control" required>
+                  <label for="gown-category">Category</label>
+                  <select id="gown-category" class="form-control" required>
                     <option value="">Select Category</option>
-                    <option value="A-Line">A-line</option>
+                    <option value="A-line">A-line</option>
                     <option value="Ball Gown">Ball Gown</option>
                     <option value="Mermaid">Mermaid</option>
                     <option value="Sheath">Sheath</option>
@@ -129,19 +318,23 @@
                   </select>
                 </div>
               </div>
-
+              
               <div class="form-row">
                 <div class="form-group">
-                  <label for="gownColor">Color</label>
-                  <input type="text" id="gownColor" class="form-control" required>
+                  <label for="gown-price">Price (₱)</label>
+                  <input type="number" id="gown-price" class="form-control" step="0.01" required>
                 </div>
-                
                 <div class="form-group">
-                  <label for="gownPrice">Price ($)</label>
-                  <input type="number" id="gownPrice" class="form-control" step="0.01" required>
+                  <label for="gown-stock">Stock Quantity</label>
+                  <input type="number" id="gown-stock" class="form-control" required>
                 </div>
               </div>
-
+              
+              <div class="form-group">
+                <label for="gown-description">Description</label>
+                <textarea id="gown-description" class="form-control" rows="4" required></textarea>
+              </div>
+              
               <div class="form-row">
                 <div class="form-group">
                   <label>Available Sizes</label>
@@ -154,174 +347,265 @@
                     <label><input type="checkbox" name="size" value="XXL"> XXL</label>
                   </div>
                 </div>
-                
                 <div class="form-group">
-                  <label for="gownStock">Stock Quantity</label>
-                  <input type="number" id="gownStock" class="form-control" required>
+                  <label>Available Colors</label>
+                  <div class="color-options">
+                    <div class="color-option">
+                      <input type="checkbox" name="color" value="White" id="color-white">
+                      <label for="color-white">White</label>
+                    </div>
+                    <div class="color-option">
+                      <input type="checkbox" name="color" value="Ivory" id="color-ivory">
+                      <label for="color-ivory">Ivory</label>
+                    </div>
+                    <div class="color-option">
+                      <input type="checkbox" name="color" value="Blush" id="color-blush">
+                      <label for="color-blush">Blush</label>
+                    </div>
+                    <div class="color-option">
+                      <input type="checkbox" name="color" value="Champagne" id="color-champagne">
+                      <label for="color-champagne">Champagne</label>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label for="gownDescription">Description</label>
-                <textarea id="gownDescription" class="form-control" rows="4"></textarea>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-fabric">Fabric</label>
+                  <input type="text" id="gown-fabric" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-style">Style</label>
+                  <input type="text" id="gown-style" class="form-control" required>
+                </div>
               </div>
-
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-neckline">Neckline</label>
+                  <input type="text" id="gown-neckline" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-sleeve">Sleeve</label>
+                  <input type="text" id="gown-sleeve" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-back">Back Closure</label>
+                  <input type="text" id="gown-back" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-detailing">Detailing</label>
+                  <input type="text" id="gown-detailing" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-shipping">Shipping</label>
+                  <input type="text" id="gown-shipping" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-return">Return Policy</label>
+                  <input type="text" id="gown-return" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-care">Care Instructions</label>
+                  <input type="text" id="gown-care" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-designer">Designer</label>
+                  <input type="text" id="gown-designer" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-collection">Collection</label>
+                  <input type="text" id="gown-collection" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-code">Product Code</label>
+                  <input type="text" id="gown-code" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gown-id">Product ID</label>
+                  <input type="text" id="gown-id" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="gown-dimensions">Product Dimensions</label>
+                  <input type="text" id="gown-dimensions" class="form-control" required>
+                </div>
+              </div>
+              
               <div class="form-group">
-                <label for="gownImages">Upload Images</label>
+                <label for="gown-images">Upload Images</label>
                 <div class="image-upload">
-                  <input type="file" id="gownImages" multiple accept="image/*">
-                  <label for="gownImages" class="upload-btn">
+                  <input type="file" id="gown-images" multiple accept="image/*">
+                  <label for="gown-images" class="btn btn-outline">
                     <i class="fas fa-cloud-upload-alt"></i> Choose Images
                   </label>
-                  <span class="file-info">No files chosen</span>
                 </div>
-                <div class="image-preview" id="imagePreview"></div>
+                <div class="image-preview" id="image-preview"></div>
               </div>
-
+              
               <div class="form-actions">
-                <button type="button" class="btn btn-outline" id="cancelGown">Cancel</button>
-                <button type="submit" class="btn" id="saveGown">Save Gown</button>
+                <button type="button" class="btn btn-outline" id="cancel-gown">Cancel</button>
+                <button type="submit" class="btn btn-primary" id="save-gown">Save Gown</button>
               </div>
             </form>
           </div>
         </div>
 
-        <!-- Categories Management (hidden by default) -->
-        <div id="categoriesContent" style="display: none;">
-          <div class="content-card">
-            <div class="card-header">
-              <h3>Gown Categories</h3>
-              <button class="btn" id="addCategory">Add Category</button>
-            </div>
-            
-            <div class="table-responsive">
-              <table id="categoriesTable">
-                <thead>
-                  <tr>
-                    <th>Category</th>
-                    <th>Number of Gowns</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Filled by JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
-        <!-- Inventory Management (hidden by default) -->
-        <div id="inventoryContent" style="display: none;">
-          <div class="content-card">
-            <div class="card-header">
-              <h3>Inventory Management</h3>
-              <button class="btn" id="exportInventory">Export Inventory</button>
-            </div>
-            
-            <div class="inventory-filters">
-              <div class="filter-group">
-                <label for="inventoryFilter">Filter:</label>
-                <select id="inventoryFilter" class="form-control">
-                  <option value="all">All Items</option>
-                  <option value="low">Low Stock (<5)</option>
-                  <option value="out">Out of Stock</option>
-                  <option value="category">By Category</option>
-                </select>
-              </div>
-              
-              <div class="filter-group" id="categoryFilterGroup" style="display: none;">
-                <label for="categoryFilter">Category:</label>
-                <select id="categoryFilter" class="form-control">
-                  <option value="all">All Categories</option>
-                  <option value="A-Line">A-line</option>
-                  <option value="Ball Gown">Ball Gown</option>
-                  <option value="Mermaid">Mermaid</option>
-                  <option value="Sheath">Sheath</option>
-                  <option value="Fit-and-flare">Fit-and-flare</option>
-                  <option value="Fitted-with-overskirt">Fitted with overskirt</option>
-                </select>
-              </div>
-              
-              <button class="btn" id="applyInventoryFilter">Apply Filter</button>
-            </div>
-            
-            <div class="table-responsive">
-              <table id="inventoryTable">
-                <thead>
-                  <tr>
-                    <th>Gown</th>
-                    <th>Category</th>
-                    <th>Size</th>
-                    <th>Stock</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Filled by JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
+<div id="categories" class="tab-content">
+  <div class="content-card">
+    <div class="card-header">
+      <h3>Gown Categories</h3>
+      <button class="btn btn-primary" id="add-category">Add Category</button>
+    </div>
 
-  <!-- Category Modal -->
-  <div class="modal" id="categoryModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="categoryModalTitle">Add New Category</h3>
-        <span class="close">&times;</span>
-      </div>
-      <form id="categoryForm">
-        <div class="form-group">
-          <label for="categoryName">Category Name</label>
-          <input type="text" id="categoryName" class="form-control" required>
-        </div>
-        
-        <div class="form-actions">
-          <button type="button" class="btn btn-outline" id="cancelCategory">Cancel</button>
-          <button type="submit" class="btn" id="saveCategory">Save Category</button>
-        </div>
-      </form>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Category Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Number of Gowns</th>
+            <th>Date Created</th>
+            <th>Last Updated</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A-line</td>
+            <td>Classic silhouette, fitted at the top and flares towards the bottom.</td>
+            <td><span class="status active">Active</span></td>
+            <td>24</td>
+            <td>2023-11-10</td>
+            <td>2024-06-01</td>
+            <td>
+              <button class="btn btn-outline btn-sm">Edit</button>
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Ball Gown</td>
+            <td>Formal design with a full skirt, great for grand weddings.</td>
+            <td><span class="status active">Active</span></td>
+            <td>18</td>
+            <td>2024-01-05</td>
+            <td>2024-06-15</td>
+            <td>
+              <button class="btn btn-outline btn-sm">Edit</button>
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Mermaid</td>
+            <td>Fitted through the body, flares out at the knees.</td>
+            <td><span class="status archived">Archived</span></td>
+            <td>15</td>
+            <td>2023-09-12</td>
+            <td>2024-03-22</td>
+            <td>
+              <button class="btn btn-outline btn-sm">Edit</button>
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
 
-  <!-- Stock Update Modal -->
-  <div class="modal" id="stockModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Update Stock</h3>
-        <span class="close">&times;</span>
-      </div>
-      <form id="stockForm">
-        <input type="hidden" id="stockGownId">
-        <input type="hidden" id="stockSize">
         
-        <div class="form-group">
-          <label for="stockQuantity">New Quantity</label>
-          <input type="number" id="stockQuantity" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="stockNotes">Notes</label>
-          <textarea id="stockNotes" class="form-control" rows="3"></textarea>
-        </div>
-        
-        <div class="form-actions">
-          <button type="button" class="btn btn-outline" id="cancelStockUpdate">Cancel</button>
-          <button type="submit" class="btn" id="saveStockUpdate">Update Stock</button>
-        </div>
-      </form>
+<div id="inventory" class="tab-content">
+  <div class="content-card">
+    <div class="card-header">
+      <h3>Inventory Management</h3>
+      <button class="btn btn-primary" id="export-inventory">Export Inventory</button>
+    </div>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Product</th>
+            <th>Size</th>
+            <th>Color</th>
+            <th>Qty</th>
+            <th>Status</th>
+            <th>Cost Price</th>
+            <th>Selling Price</th>
+            <th>Supplier</th>
+            <th>Last Restock</th>
+            <th>Next Delivery</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AMY-S-WHT</td>
+            <td>Amaya</td>
+            <td>S</td>
+            <td>White</td>
+            <td>3</td>
+            <td><span class="status in-stock">In Stock</span></td>
+            <td>$120.00</td>
+            <td>$200.00</td>
+            <td>Elegant Suppliers</td>
+            <td>2025-04-01</td>
+            <td>2025-06-01</td>
+            <td><button class="btn btn-outline btn-sm">Update</button></td>
+          </tr>
+          <tr>
+            <td>AMY-M-WHT</td>
+            <td>Amaya</td>
+            <td>M</td>
+            <td>White</td>
+            <td>2</td>
+            <td><span class="status low-stock">Low Stock</span></td>
+            <td>$120.00</td>
+            <td>$200.00</td>
+            <td>Elegant Suppliers</td>
+            <td>2025-03-15</td>
+            <td>2025-06-01</td>
+            <td><button class="btn btn-outline btn-sm">Update</button></td>
+          </tr>
+          <tr>
+            <td>BLL-L-IVR</td>
+            <td>Bella</td>
+            <td>L</td>
+            <td>Ivory</td>
+            <td>0</td>
+            <td><span class="status out-of-stock">Out of Stock</span></td>
+            <td>$150.00</td>
+            <td>$240.00</td>
+            <td>Royal Fabrics</td>
+            <td>2025-02-10</td>
+            <td>2025-06-20</td>
+            <td><button class="btn btn-outline btn-sm">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
 
-  <!-- Toast Notifications -->
-  <div id="toast-container"></div>
+   <script src="../JS/Admin.js"></script>
+        </body>
 
-  
-</body>
 </html>

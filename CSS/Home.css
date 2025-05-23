@@ -6,11 +6,11 @@
   }
   
   .hero-section {
-    background-image: url('/Images/homepage.jpg'); 
+    background-image: url('../Images/homepage.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-position-y: 20px;
+    background-position-y: 20px;  
     height: 100vh;
     overflow: auto;
     scroll-behavior: smooth;

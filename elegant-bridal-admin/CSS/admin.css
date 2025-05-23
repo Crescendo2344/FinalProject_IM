@@ -1,8 +1,8 @@
-/* Base admin styles */
+
 :root {
   --primary-color: #000000;
   --secondary-color: #333333;
-  --accent-color: #a26769;
+  --accent-color: black;
   --light-color: #ffffff;
   --light-gray: #f5f5f5;
   --medium-gray: #e0e0e0;
@@ -38,13 +38,13 @@ a {
   color: inherit;
 }
 
-/* Admin Container */
+
 .admin-container {
   display: flex;
   min-height: 100vh;
 }
 
-/* Sidebar Styles */
+
 .admin-sidebar {
   width: var(--sidebar-width);
   background-color: var(--light-color);
@@ -121,7 +121,16 @@ a {
   font-size: 16px;
 }
 
-/* Dropdown Menu */
+.sidebar-menu a.active,
+.sidebar-menu .tab-link.active {
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  border-left: 4px solid #333;
+}
+
+
+
 .menu-dropdown .dropdown-content {
   display: none;
   padding-left: 20px;
@@ -153,19 +162,19 @@ a {
   transform: rotate(180deg);
 }
 
-/* Main Content */
+
 .admin-main {
   flex: 1;
   margin-left: var(--sidebar-width);
   min-height: 100vh;
 }
 
-/* Header Styles */
+
 .admin-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 30px;
   height: var(--header-height);
   background-color: var(--light-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -251,7 +260,17 @@ a {
   color: var(--dark-gray);
 }
 
-/* Content Card Styles */
+.admin-content {
+      font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+    }   
+
+    .stats-grid{
+        display: flex;
+            justify-content: space-around;
+            padding: 20px;
+    }
+
 .content-card {
   background-color: var(--light-color);
   border-radius: 8px;
@@ -260,6 +279,14 @@ a {
   margin-bottom: 20px;
 }
 
+.stat-trendup{
+            color: green;
+    }
+
+    .stat-trenddown{
+        color: red;
+    }
+    
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -285,7 +312,15 @@ a {
   color: var(--primary-color);
 }
 
-/* Table Styles */
+.gown-image {
+  width: 60px;   
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+
+
 .table-responsive {
   overflow-x: auto;
 }
@@ -294,6 +329,8 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
+
+
 
 table th, table td {
   padding: 12px 15px;
@@ -314,7 +351,15 @@ table tr:hover {
   background-color: var(--light-gray);
 }
 
-/* Status Badges */
+.tab-content {
+  padding: 20px;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  width: 100%;
+}
+
 .status {
   padding: 6px 12px;
   border-radius: 20px;
@@ -344,7 +389,17 @@ table tr:hover {
   color: #721c24;
 }
 
-/* Button Styles */
+.status.verified {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status.unverified {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+
 .btn {
   padding: 8px 16px;
   border: none;
@@ -389,7 +444,7 @@ table tr:hover {
   background-color: var(--danger-color);
 }
 
-/* Form Styles */
+
 .form-row {
   display: flex;
   gap: 20px;
@@ -428,7 +483,7 @@ textarea.form-control {
   resize: vertical;
 }
 
-/* Modal Styles */
+
 .modal {
   display: none;
   position: fixed;
@@ -477,7 +532,56 @@ textarea.form-control {
   color: var(--primary-color);
 }
 
-/* Form Actions */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+}
+
+.page-numbers button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-numbers button:hover {
+  background-color: black;
+  color: white;
+}
+
+.page-numbers .active {
+  background-color: #333;
+  border-color: #335;
+  color: white;
+  font-weight: bold;
+}
+
+#prev-page,
+#next-page {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#prev-page:hover,
+#next-page:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -487,7 +591,22 @@ textarea.form-control {
   border-top: 1px solid var(--medium-gray);
 }
 
-/* Responsive Styles */
+.status.in-stock {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status.low-stock {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .status.out-of-stock {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+
 @media (max-width: 992px) {
   .admin-sidebar {
     width: 80px;
@@ -541,4 +660,116 @@ textarea.form-control {
     flex-direction: column;
     gap: 0;
   }
+}
+
+.chart-box {
+  margin: 20px 0;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  align-self: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+    .metrics-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 20px 0;
+    }
+    .metric-box {
+      flex: 1 1 200px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .metric-box i {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-box:hover {
+      background: #e0f7fa;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .metric-box h4 {
+      font-size: 1rem;
+      color: #555;
+    }
+    .metric-box p {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #222;
+    }
+    .chart-box {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+    .chart-box canvas {
+      max-width: 100%;
+      height: 350px;
+    }
+    .report-suggestions {
+      background: #eef4f8;
+      padding: 1rem;
+      border-left: 4px solid #3498db;
+      border-radius: 8px;
+    }
+    .report-suggestions ul {
+      list-style: none;
+      padding: 0;
+    }
+    .report-suggestions li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+
+.small-charts-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chart-box.small-chart {
+  flex: 1 1 45%;
+  max-width: 45%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.chart-box.small-chart canvas {
+  width: 100% !important;
+  height: 425px !important;
+}
+
+.user-photo{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.btn-logout {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.btn-logout:hover {
+  color: #ff4d4f;
 }

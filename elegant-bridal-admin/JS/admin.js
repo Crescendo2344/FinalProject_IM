@@ -1,6 +1,6 @@
-// Shared admin functions
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Toggle dropdown menus in sidebar
+  
   const dropdownMenus = document.querySelectorAll('.menu-dropdown > a');
   
   dropdownMenus.forEach(menu => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const parent = this.parentElement;
       parent.classList.toggle('active');
       
-      // Close other open dropdowns
+      
       dropdownMenus.forEach(otherMenu => {
         if (otherMenu !== this && otherMenu.parentElement.classList.contains('active')) {
           otherMenu.parentElement.classList.remove('active');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Set active menu item based on current page
+
   const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
   const menuItems = document.querySelectorAll('.sidebar-menu a');
   
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Initialize tooltips
+
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 });
 
-// Shared function to fetch data from JSON files
+
 async function fetchData(endpoint) {
   try {
     const response = await fetch(`data/${endpoint}.json`);
@@ -50,7 +50,7 @@ async function fetchData(endpoint) {
   }
 }
 
-// Shared function to save data to JSON files
+
 async function saveData(endpoint, data) {
   try {
     const response = await fetch(`data/${endpoint}.json`, {
@@ -67,7 +67,7 @@ async function saveData(endpoint, data) {
   }
 }
 
-// Shared function to show toast notifications
+
 function showToast(message, type = 'success') {
   const toastContainer = document.getElementById('toast-container');
   if (!toastContainer) return;
@@ -94,7 +94,6 @@ function showToast(message, type = 'success') {
   }, 3000);
 }
 
-// Shared function to confirm actions
 function confirmAction(message, callback) {
   const modal = document.createElement('div');
   modal.className = 'confirm-modal';
@@ -119,3 +118,93 @@ function confirmAction(message, callback) {
     modal.remove();
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const tabContents = document.querySelectorAll('.tab-content1', '.tab-content2', '.tab-content3');
+  const pageTitle = document.getElementById('page-title');
+  const breadcrumb = document.getElementById('breadcrumb-current');
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+    
+      const targetId = this.getAttribute('data-target');
+
+      
+      tabContents.forEach(tab => tab.style.display = 'none');
+
+    
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.style.display = 'block';
+      }
+
+    
+      const label = this.innerText.trim();
+      pageTitle.textContent = label;
+      breadcrumb.textContent = label;
+    });
+  });
+
+  
+  const defaultTab = document.querySelector('.tab-link[data-target="all-gowns"]');
+  if (defaultTab) defaultTab.click();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabLinks = document.querySelectorAll(".tab-link");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const dropdownMenu = document.querySelector(".menu-dropdown");
+  const allLinks = document.querySelectorAll(".sidebar-menu a");
+
+  function removeActiveClasses() {
+    allLinks.forEach(link => link.classList.remove("active"));
+    tabLinks.forEach(link => link.classList.remove("active"));
+  }
+
+  tabLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = this.getAttribute("data-target");
+
+      
+      tabContents.forEach(tab => {
+        tab.style.display = tab.id === target ? "block" : "none";
+      });
+
+    
+      const title = target.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      document.getElementById("page-title").textContent = title;
+      document.getElementById("breadcrumb-current").textContent = title;
+
+    
+      removeActiveClasses();
+
+    
+      this.classList.add("active");
+
+      
+      dropdownMenu.querySelector("a.has-dropdown").classList.add("active");
+    });
+  });
+
+  
+  const defaultTab = document.querySelector(".tab-link[data-target='all-gowns']");
+  if (defaultTab) defaultTab.click();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const logoutBtn = document.getElementById('logout-btn');
+
+  logoutBtn.addEventListener('click', function () {
+    
+    if (confirm('Are you sure you want to log out?')) {
+     
+      window.location.href = 'http://localhost/FinalProject_IM/Login/';
+    }
+  });
+});

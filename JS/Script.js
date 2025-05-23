@@ -311,7 +311,7 @@ function loadOrderHistory() {
     const orderEntry = document.createElement('div');
     orderEntry.className = 'order-entry';
     orderEntry.innerHTML = `
-      <div class="order-title">Order #${history.length - index} - ${order.orderDate}</div>
+      <div class="order-title">Order ID: 202505EBD${history.length - index} - ${order.orderDate}</div>
       <div class="order-details">
         <p><strong>Status:</strong> <span class="status-${order.orderStatus.toLowerCase().replace(/\s+/g, '-')}">${order.orderStatus}</span></p>
         <p><strong>Estimated Arrival:</strong> ${order.estimatedArrival}</p>

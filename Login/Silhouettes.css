@@ -1,0 +1,170 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+  
+  .navbar {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+  }
+
+  
+  .nav-left a,
+  .nav-right a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: opacity 0.30s;
+  }
+  .nav-right a:hover {
+    opacity: 0.65;
+  }
+
+   #search-bar {
+    display: none;
+    position: absolute; 
+    background: white;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  #search-bar input {
+    padding: 8px;
+    font-size: 14px;
+    width: 1296.9px;
+    height: 45.5px;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+  }
+  
+  #search-bar i {
+    margin-left: 8px;
+    cursor: pointer;
+    color: #666;
+  }
+
+  #close-search:hover {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    color: black;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding-right: 15px;
+    margin: 20px 0;
+    color: black;
+    font-family: inherit;
+    transition: opacity 0.30s;
+  }
+  .dropbtn:hover{
+    opacity: 0.65;
+  }
+
+  .mega-dropdown {
+    display: none;
+    position: absolute;
+    top: 67px;
+    background-color: white;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    gap: 40px;
+    z-index: 100;
+  }
+
+  .dropdown:hover .mega-dropdown {
+    display: flex;
+  }
+
+  .dropdown-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-column h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .dropdown-column a {
+    padding: 5px 0;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .mega-dropdown:has(a:hover) a:not(:hover) {
+    color: gray;
+  }
+
+  .mega-dropdown a:hover{
+    color: #000;
+  }
+  .nav-right img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    cursor: pointer;
+    transform: translateX(-50%);
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: #000;
+    
+  }
+ 
+  
+  .link{
+    position: absolute;
+    letter-spacing: 2px;
+    color: grey;
+    left: 50.5%;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: #000;
+    transition: opacity 0.30s;
+  }
+  .link a:hover{
+    opacity: 0.65;
+  }
+
+  #link-login{
+    justify-content: center;
+    margin-left: -100px;
+  }
